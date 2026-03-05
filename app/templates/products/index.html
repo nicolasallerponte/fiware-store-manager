@@ -1,21 +1,21 @@
 {% extends 'base.html' %}
 
-{% block title %}Products - Smart Store{% endblock %}
+{% block title %}{{ _('Products - Smart Store') }}{% endblock %}
 
 {% block content %}
 <div class="flex justify-between items-center mb-4">
-    <h1>Products Master List</h1>
+    <h1>{{ _('Products Master List') }}</h1>
 </div>
 
 <div class="table-container">
     <table>
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Added</th>
-                <th>Action</th>
+                <th>{{ _('ID') }}</th>
+                <th>{{ _('Name') }}</th>
+                <th>{{ _('Price') }}</th>
+                <th>{{ _('Added') }}</th>
+                <th>{{ _('Action') }}</th>
             </tr>
         </thead>
         <tbody>
@@ -26,12 +26,12 @@
                 <td>${{ "%.2f"|format(product.price) }}</td>
                 <td>{{ product.created_at.strftime('%Y-%m-%d') }}</td>
                 <td>
-                    <a href="{{ url_for('products.detail', product_id=product.id) }}" class="btn btn-secondary text-sm">View Details</a>
+                    <a href="{{ url_for('products.detail', product_id=product.id) }}" class="btn btn-secondary text-sm">{{ _('View Details') }}</a>
                 </td>
             </tr>
             {% else %}
             <tr>
-                <td colspan="5">No products found.</td>
+                <td colspan="5">{{ _('No products found.') }}</td>
             </tr>
             {% endfor %}
         </tbody>

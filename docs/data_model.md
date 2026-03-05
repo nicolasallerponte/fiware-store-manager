@@ -2,6 +2,8 @@
 
 The application uses a relational data model with three specific tables to handle stores, products, and their relationships. A Many-to-Many architecture is employed allowing localized inventory tracking.
 
+_Note: Translation logic (Flask-Babel) handles UI strings only and relies on message catalogs (`.po` and `.mo` files), not the relational schema discussed here._
+
 ## Entity Relationship Diagram (ERD)
 
 ```mermaid

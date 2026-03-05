@@ -1,24 +1,24 @@
 {% extends 'base.html' %}
 
-{% block title %}{{ store.name }} - Smart Store{% endblock %}
+{% block title %}{{ _('%(store_name)s - Smart Store', store_name=store.name) }}{% endblock %}
 
 {% block content %}
 <div class="mb-4">
-    <a href="{{ url_for('stores.index') }}" class="btn btn-secondary mb-2"><- Back to Stores</a>
+    <a href="{{ url_for('stores.index') }}" class="btn btn-secondary mb-2">{{ _('<- Back to Stores') }}</a>
     <h1>{{ store.name }}</h1>
     <p>{{ store.location }}</p>
 </div>
 
-<h2>Inventory</h2>
+<h2>{{ _('Inventory') }}</h2>
 {% if store.inventory %}
 <div class="table-container">
     <table>
         <thead>
             <tr>
-                <th>Product Name</th>
-                <th>Price</th>
-                <th>Stock Quantity</th>
-                <th>Action</th>
+                <th>{{ _('Product Name') }}</th>
+                <th>{{ _('Price') }}</th>
+                <th>{{ _('Stock Quantity') }}</th>
+                <th>{{ _('Action') }}</th>
             </tr>
         </thead>
         <tbody>
@@ -27,10 +27,10 @@
                 <td>{{ item.product.name }}</td>
                 <td>${{ "%.2f"|format(item.product.price) }}</td>
                 <td>
-                    <span class="text-sm" style="color: var(--text-secondary);">{{ item.stock_quantity }} in stock</span>
+                    <span class="text-sm" style="color: var(--text-secondary);">{{ _('%(count)s in stock', count=item.stock_quantity) }}</span>
                 </td>
                 <td>
-                    <a href="{{ url_for('products.detail', product_id=item.product.id) }}" class="btn btn-secondary text-sm">View Product</a>
+                    <a href="{{ url_for('products.detail', product_id=item.product.id) }}" class="btn btn-secondary text-sm">{{ _('View Product') }}</a>
                 </td>
             </tr>
             {% endfor %}
@@ -38,6 +38,6 @@
     </table>
 </div>
 {% else %}
-<p>This store has no inventory yet.</p>
+<p>{{ _('This store has no inventory yet.') }}</p>
 {% endif %}
 {% endblock %}

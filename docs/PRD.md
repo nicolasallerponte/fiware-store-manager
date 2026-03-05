@@ -6,7 +6,7 @@ Fiware Smart Store
 
 ## Overview
 
-Fiware Smart Store is a web application designed to manage a supermarket chain. It provides an intuitive, high-performance interface for viewing and managing stores, the products they carry, and their respective inventory levels.
+Fiware Smart Store is a web application designed to manage a supermarket chain. It provides an intuitive, high-performance interface for viewing and managing stores, the products they carry, and their respective inventory levels. It also features robust multi-language support (English, Spanish, Galician, German).
 
 ## Objectives
 
@@ -14,6 +14,7 @@ Fiware Smart Store is a web application designed to manage a supermarket chain. 
 - Offer a dedicated view for exploring registered stores and their specific inventory.
 - Offer a master product list detailing all products tracked across the supermarket chain.
 - Ensure a premium user experience utilizing a dark minimalist design system.
+- Provide a localized user experience through multi-language support.
 
 ## Design System Constraints
 
@@ -28,6 +29,11 @@ The application strictly follows a dark minimalist aesthetic inspired by Linear/
 - **Effects:** Absolutely no box-shadows or gradients.
 
 ## Core Features & Views
+
+### 0. Localization
+
+- The web app supports UI translation in 4 languages: English, Español, Galego, and Deutsch.
+- Users can toggle between languages using a dropdown in the navigation bar.
 
 ### 1. Dashboard (`/`)
 

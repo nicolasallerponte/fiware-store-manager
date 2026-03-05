@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{% block title %}Smart Store{% endblock %}</title>
+    <title>{% block title %}{{ _('Smart Store') }}{% endblock %}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,6 +14,57 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='css/style.css') }}"
     />
+    <style>
+      .language-selector {
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin-left: 1rem;
+        font-size: 0.95rem;
+        font-weight: 500;
+        cursor: pointer;
+        height: 100%;
+      }
+      .dropdown-trigger {
+        color: var(--text-secondary);
+        transition: color 0.2s ease;
+        display: flex;
+        align-items: center;
+        line-height: 1;
+      }
+      .dropdown-trigger:hover,
+      .language-selector.open .dropdown-trigger {
+        color: var(--text-primary);
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        right: 0;
+        top: 100%;
+        background-color: var(--card-bg);
+        min-width: 120px;
+        z-index: 10;
+        border: 1px solid var(--border-color);
+        border-radius: 2px;
+        padding: 0.5rem 0;
+        margin-top: 0.2rem;
+      }
+      .language-selector.open .dropdown-content {
+        display: block;
+      }
+      .dropdown-content a {
+        color: var(--text-secondary);
+        padding: 0.5rem 1rem;
+        display: block;
+        text-decoration: none;
+        transition: background-color 0.2s ease, color 0.2s ease;
+      }
+      .dropdown-content a:hover {
+        background-color: #f5f5f5;
+        color: #111;
+        opacity: 1; /* override global a:hover opacity */
+      }
+    </style>
   </head>
   <body>
     <div class="container">
@@ -22,13 +73,45 @@
           >Smart Store.</a
         >
         <div class="nav-links">
-          <a href="{{ url_for('main.dashboard') }}">Overview</a>
-          <a href="{{ url_for('stores.index') }}">Stores</a>
-          <a href="{{ url_for('products.index') }}">Products</a>
+          <a href="{{ url_for('main.dashboard') }}">{{ _('Overview') }}</a>
+          <a href="{{ url_for('stores.index') }}">{{ _('Stores') }}</a>
+          <a href="{{ url_for('products.index') }}">{{ _('Products') }}</a>
+          <div class="language-selector" id="languageSelector">
+            <div class="dropdown-trigger" id="dropdownTrigger">
+              {% if session.get('language') == 'de' %}Deutsch
+              {% elif session.get('language') == 'es' %}Español
+              {% elif session.get('language') == 'gl' %}Galego
+              {% else %}English{% endif %} ▾
+            </div>
+            <div class="dropdown-content">
+              <a href="{{ url_for('main.set_locale', locale='de') }}" {% if session.get('language') == 'de' %}style="color: #111; font-weight: 600;"{% endif %}>Deutsch</a>
+              <a href="{{ url_for('main.set_locale', locale='en') }}" {% if session.get('language', 'en') == 'en' %}style="color: #111; font-weight: 600;"{% endif %}>English</a>
+              <a href="{{ url_for('main.set_locale', locale='es') }}" {% if session.get('language') == 'es' %}style="color: #111; font-weight: 600;"{% endif %}>Español</a>
+              <a href="{{ url_for('main.set_locale', locale='gl') }}" {% if session.get('language') == 'gl' %}style="color: #111; font-weight: 600;"{% endif %}>Galego</a>
+            </div>
+          </div>
         </div>
       </nav>
 
       <main>{% block content %}{% endblock %}</main>
     </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const langSelector = document.getElementById('languageSelector');
+        const trigger = document.getElementById('dropdownTrigger');
+        
+        trigger.addEventListener('click', (e) => {
+          e.stopPropagation();
+          langSelector.classList.toggle('open');
+        });
+
+        document.addEventListener('click', (e) => {
+          if (!langSelector.contains(e.target)) {
+            langSelector.classList.remove('open');
+          }
+        });
+      });
+    </script>
   </body>
 </html>

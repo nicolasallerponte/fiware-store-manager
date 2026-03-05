@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
 
-{% block title %}{{ product.name }} - Smart Store{% endblock %}
+{% block title %}{{ _('%(product_name)s - Smart Store', product_name=product.name) }}{% endblock %}
 
 {% block content %}
 <div class="mb-4">
-    <a href="{{ url_for('products.index') }}" class="btn btn-secondary mb-2"><- Back to Products</a>
+    <a href="{{ url_for('products.index') }}" class="btn btn-secondary mb-2">{{ _('<- Back to Products') }}</a>
     <h1>{{ product.name }}</h1>
     <p class="text-sm mb-2" style="color: var(--text-secondary); border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">${{ "%.2f"|format(product.price) }}</p>
     <p>{{ product.description }}</p>
 </div>
 
-<h2>Available at Stores</h2>
+<h2>{{ _('Available at Stores') }}</h2>
 {% if product.inventory %}
 <div class="grid mt-4">
     {% for item in product.inventory %}
@@ -18,13 +18,13 @@
         <h3>{{ item.store.name }}</h3>
         <p>{{ item.store.location }}</p>
         <div class="flex justify-between items-center mt-4">
-            <span class="text-sm" style="color: var(--text-secondary);">{{ item.stock_quantity }} in stock</span>
-            <a href="{{ url_for('stores.detail', store_id=item.store.id) }}" class="btn btn-secondary text-sm">View Store</a>
+            <span class="text-sm" style="color: var(--text-secondary);">{{ _('%(count)s in stock', count=item.stock_quantity) }}</span>
+            <a href="{{ url_for('stores.detail', store_id=item.store.id) }}" class="btn btn-secondary text-sm">{{ _('View Store') }}</a>
         </div>
     </div>
     {% endfor %}
 </div>
 {% else %}
-<p>This product is tracking no inventory in any store.</p>
+<p>{{ _('This product is tracking no inventory in any store.') }}</p>
 {% endif %}
 {% endblock %}
