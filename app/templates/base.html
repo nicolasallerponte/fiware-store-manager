@@ -73,9 +73,10 @@
           >Smart Store.</a
         >
         <div class="nav-links">
+          <a href="{{ url_for('employees.index') }}">{{ _('Employees') }}</a>
           <a href="{{ url_for('main.dashboard') }}">{{ _('Overview') }}</a>
-          <a href="{{ url_for('stores.index') }}">{{ _('Stores') }}</a>
           <a href="{{ url_for('products.index') }}">{{ _('Products') }}</a>
+          <a href="{{ url_for('stores.index') }}">{{ _('Stores') }}</a>
           <div class="language-selector" id="languageSelector">
             <div class="dropdown-trigger" id="dropdownTrigger">
               {% if session.get('language') == 'de' %}Deutsch

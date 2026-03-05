@@ -1,5 +1,5 @@
 import pytest
-from app.models import Store, Product, Shelf, InventoryItem, generate_urn
+from app.models import Store, Product, Shelf, InventoryItem, Employee, generate_urn
 
 def test_store_persistence(db_session):
     """Test creating a Store and verify it persists."""
@@ -107,3 +107,43 @@ def test_store_cascade_delete(db_session):
     assert db_session.query(Shelf).filter_by(ref_store=store.id).count() == 0
     # Verify product still exists
     assert db_session.get(Product, product.id) is not None
+
+def test_employee_persistence(db_session):
+    """Test creating an Employee and verify it persists."""
+    store = Store(id=generate_urn('Store', 105), name="S5", address_street="S", address_locality="L", address_region="R", latitude=0, longitude=0)
+    db_session.add(store)
+    db_session.commit()
+
+    emp_id = generate_urn('Employee', 101)
+    employee = Employee(
+        id=emp_id,
+        name="Test Employee",
+        role="Manager",
+        salary=50000.0,
+        ref_store=store.id
+    )
+    db_session.add(employee)
+    db_session.commit()
+
+    saved_employee = db_session.get(Employee, emp_id)
+    assert saved_employee is not None
+    assert saved_employee.name == "Test Employee"
+    assert saved_employee.store.name == "S5"
+
+def test_store_employee_cascade(db_session):
+    """Test that deleting a Store deletes its Employees."""
+    store = Store(id=generate_urn('Store', 106), name="S6", address_street="S", address_locality="L", address_region="R", latitude=0, longitude=0)
+    db_session.add(store)
+    db_session.commit()
+
+    emp_id = generate_urn('Employee', 102)
+    employee = Employee(id=emp_id, name="Temp Emp", role="Staff", salary=20000.0, ref_store=store.id)
+    db_session.add(employee)
+    db_session.commit()
+
+    assert db_session.query(Employee).filter_by(ref_store=store.id).count() == 1
+
+    db_session.delete(store)
+    db_session.commit()
+
+    assert db_session.query(Employee).filter_by(ref_store=store.id).count() == 0

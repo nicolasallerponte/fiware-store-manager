@@ -21,6 +21,7 @@ class Store(db.Model):
     # Relationships
     shelves = db.relationship('Shelf', back_populates='store', cascade='all, delete-orphan')
     inventory = db.relationship('InventoryItem', back_populates='store', cascade='all, delete-orphan')
+    employees = db.relationship('Employee', back_populates='store', cascade='all, delete-orphan')
 
 class Shelf(db.Model):
     __tablename__ = 'shelves'
@@ -60,3 +61,15 @@ class InventoryItem(db.Model):
     store = db.relationship('Store', back_populates='inventory')
     product = db.relationship('Product', back_populates='inventory')
     shelf = db.relationship('Shelf', back_populates='inventory')
+
+class Employee(db.Model):
+    __tablename__ = 'employees'
+    id = db.Column(db.String(100), primary_key=True)  # urn:ngsi-ld:Employee:XXX
+    name = db.Column(db.String(100), nullable=False)
+    image = db.Column(db.String(255), nullable=True)
+    salary = db.Column(db.Float, nullable=False)
+    role = db.Column(db.String(100), nullable=False)
+    ref_store = db.Column(db.String(100), db.ForeignKey('stores.id'), nullable=False)
+
+    # Relationships
+    store = db.relationship('Store', back_populates='employees')

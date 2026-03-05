@@ -12,6 +12,7 @@ erDiagram
     SHELF ||--o{ INVENTORY_ITEM : "holds"
     STORE ||--o{ INVENTORY_ITEM : "manages"
     PRODUCT ||--o{ INVENTORY_ITEM : "is tracked as"
+    STORE ||--o{ EMPLOYEE : "employs"
 
     STORE {
         String id PK "URN"
@@ -49,6 +50,15 @@ erDiagram
         String ref_shelf FK
         Integer stock_count
         Integer shelf_count
+    }
+
+    EMPLOYEE {
+        String id PK "URN"
+        String name
+        String image
+        Float salary
+        String role
+        String ref_store FK
     }
 ```
 
@@ -92,7 +102,18 @@ Junction entity tracking stock across stores and specific shelves.
 - `stock_count` (Integer): Total units in store.
 - `shelf_count` (Integer): Units currently on the specific shelf.
 
+### 5. `employees`
+
+Represents a staff member assigned to a store.
+
+- `id` (String URN, PK): e.g., `urn:ngsi-ld:Employee:001`.
+- `name` (String): Full name.
+- `role` (String): Job title (e.g., Manager, Sales Associate).
+- `salary` (Float): Annual salary.
+- `image` (String): URL to profile photo.
+- `ref_store` (String URN, FK): Store where the employee works.
+
 ## Testing Considerations
 
-- **Integrity:** The `InventoryItem` relationship includes a cascade delete on the `Store` relationship, meaning deleting a store automatically removes its inventory records. This is verified by the test suite.
+- **Integrity:** The `InventoryItem` and `Employee` relationships include a cascade delete on the `Store` relationship, meaning deleting a store automatically removes its inventory records and staff records. This is verified by the test suite.
 - **In-Memory Testing:** All models are compatible with in-memory SQLite for rapid automated testing without side effects on the development database.

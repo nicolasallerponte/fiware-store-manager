@@ -48,7 +48,33 @@
         </tbody>
     </table>
 </div>
+{% endif %}
+
+<h2 class="mt-8">{{ _('Employees') }}</h2>
+{% if store.employees %}
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>{{ _('Name') }}</th>
+                <th>{{ _('Role') }}</th>
+                <th>{{ _('Action') }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for employee in store.employees %}
+            <tr>
+                <td>{{ employee.name }}</td>
+                <td>{{ employee.role }}</td>
+                <td>
+                    <a href="{{ url_for('employees.detail', employee_id=employee.id) }}" class="btn btn-secondary text-sm">{{ _('View Profile') }}</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
 {% else %}
-<p>{{ _('This store has no inventory yet.') }}</p>
+<p>{{ _('No employees assigned to this store.') }}</p>
 {% endif %}
 {% endblock %}

@@ -1,6 +1,6 @@
 import os
 from app import create_app
-from app.models import db, Store, Shelf, Product, InventoryItem, generate_urn
+from app.models import db, Store, Shelf, Product, InventoryItem, Employee, generate_urn
 
 app = create_app()
 
@@ -122,5 +122,30 @@ with app.app_context():
             ))
 
     db.session.add_all(inventory_items)
+
+    # Create 8 Employees (2 per store)
+    employees_data = [
+        ('Alice Johnson', 'Store Manager', 45000.0, 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150', stores[0].id),
+        ('Bob Smith', 'Sales Associate', 32000.0, 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150', stores[0].id),
+        ('Charlie Davis', 'Store Manager', 46000.0, 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150', stores[1].id),
+        ('Diana Prince', 'Inventory Specialist', 35000.0, 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150', stores[1].id),
+        ('Edward Norton', 'Store Manager', 44000.0, 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150', stores[2].id),
+        ('Fiona Gallagher', 'Sales Associate', 31000.0, 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=150', stores[2].id),
+        ('George Miller', 'Store Manager', 47000.0, 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150', stores[3].id),
+        ('Hannah Abbott', 'Cashier', 28000.0, 'https://images.unsplash.com/photo-1554151228-14d9def656e4?auto=format&fit=crop&q=80&w=150', stores[3].id)
+    ]
+    
+    employees = []
+    for i, (name, role, salary, img, store_id) in enumerate(employees_data):
+        employees.append(Employee(
+            id=generate_urn('Employee', i+1),
+            name=name,
+            role=role,
+            salary=salary,
+            image=img,
+            ref_store=store_id
+        ))
+    
+    db.session.add_all(employees)
     db.session.commit()
     print('Database initialized with sample data successfully.')

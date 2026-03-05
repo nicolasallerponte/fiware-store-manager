@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ _('%(employee_name)s - Smart Store', employee_name=employee.name) }}{% endblock %}
+
+{% block content %}
+<div class="mb-4">
+    <a href="{{ url_for('employees.index') }}" class="btn btn-secondary mb-2">{{ _('<- Back to Employees') }}</a>
+    
+    <div class="flex gap-4 items-start mt-4">
+        {% if employee.image %}
+        <img src="{{ employee.image }}" alt="{{ employee.name }}" style="width: 200px; height: 200px; object-fit: cover; border: 1px solid var(--border-color); border-radius: 4px;">
+        {% else %}
+        <div style="width: 200px; height: 200px; background-color: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 4px; display: flex; align-items: center; justify-content: center;">
+            <span style="font-size: 4rem;">👤</span>
+        </div>
+        {% endif %}
+        <div class="flex-grow">
+            <h1>{{ employee.name }}</h1>
+            <p class="text-sm mb-4" style="color: var(--text-secondary); border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; font-weight: 500;">{{ employee.role }}</p>
+            
+            <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div>
+                    <p class="text-xs uppercase" style="color: var(--text-secondary); margin-bottom: 2px;">{{ _('Salary') }}</p>
+                    <p>€{{ "%.2f"|format(employee.salary) }}</p>
+                </div>
+                <div>
+                    <p class="text-xs uppercase" style="color: var(--text-secondary); margin-bottom: 2px;">{{ _('Assigned Store') }}</p>
+                    <p><a href="{{ url_for('stores.detail', store_id=employee.store.id) }}" class="text-link">{{ employee.store.name }}</a></p>
+                </div>
+            </div>
+            
+            <div class="mt-4">
+                <p class="text-xs" style="color: var(--text-secondary);">ID: <code class="text-xs">{{ employee.id }}</code></p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

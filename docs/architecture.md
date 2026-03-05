@@ -25,17 +25,21 @@ fiware-smart-store/
 │   │   ├── __init__.py      # Blueprint registration
 │   │   ├── main.py          # Dashboard routes and locale switcher
 │   │   ├── products.py      # Product specific routes
-│   │   └── stores.py        # Store specific routes
+│   │   ├── stores.py        # Store specific routes
+│   │   └── employees.py     # Employee specific routes
 │   ├── static/              # Static assets
 │   │   └── css/
-│   │       └── style.css    # Dark minimalist design system
+│   │       └── style.css    # Light minimalist design system
 │   └── templates/           # Jinja2 HTML templates
 │       ├── base.html        # Main layout wrapper
 │       ├── dashboard.html   # Main index view
 │       ├── products/        # Product views
 │       │   ├── detail.html
-│       │   └── index.html
-│       └── stores/          # Store views
+│   │   └── index.html
+│       ├── stores/          # Store views
+│           ├── detail.html
+│           └── index.html
+│       └── employees/       # Employee views
 │           ├── detail.html
 │           └── index.html
 ├── docs/                    # Technical documentation
@@ -65,6 +69,7 @@ The application uses Flask Blueprints to separate concerns into logical modules:
 1. `main_bp`: Handles root-level endpoints like the Dashboard overview and the locale switching route.
 2. `stores_bp`: Mounted at `/stores`. Handles listing all stores and serving detailed inventory views per store.
 3. `products_bp`: Mounted at `/products`. Handles the master list of products and showing cross-store availability for specific items.
+4. `employees_bp`: Mounted at `/employees`. Handles listing all employees and serving detailed profile views per staff member.
 
 ## Database Strategy
 
@@ -75,8 +80,9 @@ Key architectural components:
 - **URN-based Identity:** All primary keys are string-based URNs (e.g., `urn:ngsi-ld:Store:001`).
 - **Entity Relationships:**
   - A `Store` possesses multiple `Shelves`.
+  - A `Store` possesses multiple `Employees`.
   - `Products` are mapped to specific `Shelves` within `Stores` via the `InventoryItem` junction table.
-  - This structure facilitates fine-grained inventory tracking (both at the store level and the specific shelf level).
+  - This structure facilitates fine-grained inventory tracking (both at the store level and the specific shelf level) and staff management.
 
 ## Internationalization Strategy
 

@@ -10,23 +10,24 @@ Fiware Smart Store is a web application designed to manage a supermarket chain. 
 
 ## Objectives
 
-- Provide a centralized dashboard to monitor high-level system metrics (total stores, total products).
-- Offer a dedicated view for exploring registered stores and their specific inventory.
+- Provide a centralized dashboard to monitor high-level system metrics (total stores, total products, total employees).
+- Offer a dedicated view for exploring registered stores and their specific inventory and staff.
 - Offer a master product list detailing all products tracked across the supermarket chain.
-- Ensure a premium user experience utilizing a dark minimalist design system.
+- Offer a master employee list detailing all staff members across the chain.
+- Ensure a premium user experience utilizing a light minimalist design system.
 - Provide a localized user experience through multi-language support.
 
 ## Design System Constraints
 
-The application strictly follows a dark minimalist aesthetic inspired by Linear/Vercel.
+The application strictly follows a light minimalist aesthetic inspired by Notion/Muji.
 
 - **Typography:** Inter (Google Fonts).
-- **Background Color:** `#0f0f0f`
-- **Card Background:** `#1a1a1a`
-- **Text:** Primary `#ffffff`, Secondary `#888888`
-- **Accent Color:** `#6366f1`
-- **Borders:** Target elements have `1px solid #222` borders.
-- **Effects:** Absolutely no box-shadows or gradients.
+- **Background Color:** `#fafafa`
+- **Card Background:** `#ffffff`
+- **Text:** Primary `#111111`, Secondary `#666666`
+- **Accent Color:** `#111111`
+- **Borders:** Target elements have `1px solid #e5e5e5` borders.
+- **Effects:** High-quality micro-animations and clean lines. No box-shadows or gradients.
 
 ## Core Features & Views
 
@@ -49,6 +50,11 @@ Landing page providing a high-level overview. Must display metric cards summariz
 - **Index View:** A master list of all products defined in the system, showing URN IDs, names, pricing, size, and origin country.
 - **Detail View:** Deep dive into a specific product. Displays product metadata (URN ID, image, price, size, origin country) and enumerates which stores currently stock the product, along with localized stock counts.
 
+### 4. Employees Module (`/employees`)
+
+- **Index View:** A grid listing all employees, showing their name, role, image, and assigned store.
+- **Detail View:** Deep dive into a specific employee. Displays name, role, photo, salary, and a link to their assigned store.
+
 ## Data Requirements (FIWARE NGSIv2 Compliant)
 
 The system aligns with the FIWARE NGSIv2 CRUD Operations tutorial structure:
@@ -58,10 +64,12 @@ The system aligns with the FIWARE NGSIv2 CRUD Operations tutorial structure:
   - **Store:** Includes name, street address, locality, region, coordinates (lat/long), and image.
   - **Shelf:** Represents storage units within a store, linked via `ref_store`.
   - **Product:** Includes name, price, size (S/M/L/XL), image, and origin country.
+  - **Employee:** Includes name, role, salary, image, and `ref_store` relationship.
   - **InventoryItem:** Links stores, products, and shelves, tracking `stock_count` and `shelf_count`.
 - **Sample Data:**
   - Exactly 4 stores with real-world addresses and coordinates.
   - Exactly 10 distinct products.
+  - Exactly 8 employees distributed across stores (2 per store).
   - Distribution ensuring realistic inventory mapping across stores.
 - Initial database is seeded via `init_db.py`.
 
@@ -69,6 +77,6 @@ The system aligns with the FIWARE NGSIv2 CRUD Operations tutorial structure:
 
 The application includes a comprehensive test suite using `pytest` and `pytest-flask`.
 
-- **Database Coverage:** All database models (Store, Product, InventoryItem) must have persistence and relationship tests using an in-memory SQLite database.
-- **Route Coverage:** All core routes (Dashboard, Store listing/detail, Product listing/detail) must be tested for correct status codes (200/404) and basic content presence.
+- **Database Coverage:** All database models (Store, Product, Employee, InventoryItem) must have persistence and relationship tests using an in-memory SQLite database.
+- **Route Coverage:** All core routes (Dashboard, Store listing/detail, Product listing/detail, Employee listing/detail) must be tested for correct status codes (200/404) and basic content presence.
 - **Fixtures:** Tests must use clean fixtures for the Flask application and database session to ensure test isolation.

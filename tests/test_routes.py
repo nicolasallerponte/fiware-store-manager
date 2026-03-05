@@ -1,5 +1,5 @@
 import pytest
-from app.models import Store, Product, generate_urn
+from app.models import Store, Product, Employee, generate_urn
 
 def test_dashboard_route(client):
     """Test that the dashboard returns 200."""
@@ -57,3 +57,30 @@ def test_product_detail_route(client, db_session):
     response = client.get(f'/products/{product_id}')
     assert response.status_code == 200
     assert b"Test Product" in response.data
+
+def test_employees_list_route(client):
+    """Test that the employees list returns 200."""
+    response = client.get('/employees')
+    assert response.status_code == 200
+
+def test_employee_detail_route(client, db_session):
+    """Test employee detail returns 200 for existing, 404 for non-existing."""
+    # Test 404
+    response = client.get('/employees/urn:ngsi-ld:Employee:999')
+    assert response.status_code == 404
+
+    # Create a store and employee
+    store_id = generate_urn('Store', 202)
+    store = Store(id=store_id, name="S", address_street="S", address_locality="L", address_region="R", latitude=0, longitude=0)
+    db_session.add(store)
+    db_session.commit()
+
+    emp_id = generate_urn('Employee', 201)
+    employee = Employee(id=emp_id, name="Test Emp", role="Staff", salary=30000.0, ref_store=store_id)
+    db_session.add(employee)
+    db_session.commit()
+
+    # Test 200
+    response = client.get(f'/employees/{emp_id}')
+    assert response.status_code == 200
+    assert b"Test Emp" in response.data

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-03-05 20:35+0100\n"
+"POT-Creation-Date: 2026-03-05 21:36+0100\n"
 "PO-Revision-Date: 2026-03-05 20:35+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -22,17 +22,22 @@ msgstr ""
 msgid "Smart Store"
 msgstr "Tienda Inteligente"
 
-#: app/templates/base.html:25 app/templates/dashboard.html:7
+#: app/templates/base.html:76 app/templates/employees/index.html:7
+#: app/templates/stores/detail.html:53
+msgid "Employees"
+msgstr "Empleados"
+
+#: app/templates/base.html:77 app/templates/dashboard.html:7
 msgid "Overview"
 msgstr "Resumen"
 
-#: app/templates/base.html:26 app/templates/stores/index.html:7
-msgid "Stores"
-msgstr "Tiendas"
-
-#: app/templates/base.html:27
+#: app/templates/base.html:78
 msgid "Products"
 msgstr "Productos"
+
+#: app/templates/base.html:79 app/templates/stores/index.html:7
+msgid "Stores"
+msgstr "Tiendas"
 
 #: app/templates/dashboard.html:3
 msgid "Dashboard - Smart Store"
@@ -54,6 +59,44 @@ msgstr "Ver todas las tiendas"
 msgid "View All Products"
 msgstr "Ver todos los productos"
 
+#: app/templates/employees/detail.html:3
+#, fuzzy, python-format
+msgid "%(employee_name)s - Smart Store"
+msgstr "%(employee_name)s - Tienda Inteligente"
+
+#: app/templates/employees/detail.html:7
+#, fuzzy
+msgid "<- Back to Employees"
+msgstr "<- Volver a Empleados"
+
+#: app/templates/employees/detail.html:23
+msgid "Salary"
+msgstr "Salario"
+
+#: app/templates/employees/detail.html:27
+#, fuzzy
+msgid "Assigned Store"
+msgstr "Tienda Asignada"
+
+#: app/templates/employees/index.html:3
+#, fuzzy
+msgid "Employees - Smart Store"
+msgstr "Empleados - Tienda Inteligente"
+
+#: app/templates/employees/index.html:24
+msgid "At"
+msgstr "En"
+
+#: app/templates/employees/index.html:26 app/templates/stores/detail.html:70
+#, fuzzy
+msgid "View Profile"
+msgstr "Ver Perfil"
+
+#: app/templates/employees/index.html:30
+#, fuzzy
+msgid "No employees found."
+msgstr "No se encontraron empleados."
+
 #: app/templates/products/detail.html:3
 #, python-format
 msgid "%(product_name)s - Smart Store"
@@ -63,20 +106,28 @@ msgstr "%(product_name)s - Tienda Inteligente"
 msgid "<- Back to Products"
 msgstr "<- Volver a Productos"
 
-#: app/templates/products/detail.html:13
+#: app/templates/products/detail.html:16 app/templates/products/index.html:17
+msgid "Size"
+msgstr "Tamaño"
+
+#: app/templates/products/detail.html:17 app/templates/products/index.html:18
+msgid "Origin"
+msgstr "Origen"
+
+#: app/templates/products/detail.html:23
 msgid "Available at Stores"
 msgstr "Disponible en tiendas"
 
-#: app/templates/products/detail.html:21 app/templates/stores/detail.html:30
+#: app/templates/products/detail.html:31 app/templates/stores/detail.html:40
 #, python-format
 msgid "%(count)s in stock"
 msgstr "%(count)s en stock"
 
-#: app/templates/products/detail.html:22
+#: app/templates/products/detail.html:32
 msgid "View Store"
 msgstr "Ver Tienda"
 
-#: app/templates/products/detail.html:28
+#: app/templates/products/detail.html:38
 msgid "This product is tracking no inventory in any store."
 msgstr "Este producto no tiene inventario en ninguna tienda."
 
@@ -92,27 +143,24 @@ msgstr "Lista Maestra de Productos"
 msgid "ID"
 msgstr "ID"
 
-#: app/templates/products/index.html:15
+#: app/templates/products/index.html:15 app/templates/stores/detail.html:59
 msgid "Name"
 msgstr "Nombre"
 
-#: app/templates/products/index.html:16 app/templates/stores/detail.html:19
+#: app/templates/products/index.html:16 app/templates/stores/detail.html:28
 msgid "Price"
 msgstr "Precio"
 
-#: app/templates/products/index.html:17
-msgid "Added"
-msgstr "Añadido"
-
-#: app/templates/products/index.html:18 app/templates/stores/detail.html:21
+#: app/templates/products/index.html:19 app/templates/stores/detail.html:31
+#: app/templates/stores/detail.html:61
 msgid "Action"
 msgstr "Acción"
 
-#: app/templates/products/index.html:29
+#: app/templates/products/index.html:31
 msgid "View Details"
 msgstr "Ver Detalles"
 
-#: app/templates/products/index.html:34
+#: app/templates/products/index.html:36
 msgid "No products found."
 msgstr "No se encontraron productos."
 
@@ -125,40 +173,44 @@ msgstr "%(store_name)s - Tienda Inteligente"
 msgid "<- Back to Stores"
 msgstr "<- Volver a Tiendas"
 
-#: app/templates/stores/detail.html:12
+#: app/templates/stores/detail.html:21
 msgid "Inventory"
 msgstr "Inventario"
 
-#: app/templates/stores/detail.html:18
+#: app/templates/stores/detail.html:27
 msgid "Product Name"
 msgstr "Nombre del Producto"
 
-#: app/templates/stores/detail.html:20
-msgid "Stock Quantity"
+#: app/templates/stores/detail.html:29
+#, fuzzy
+msgid "Stock Count"
 msgstr "Cantidad en Stock"
 
-#: app/templates/stores/detail.html:33
+#: app/templates/stores/detail.html:30
+msgid "Shelf Count"
+msgstr "Cantidad en Estantería"
+
+#: app/templates/stores/detail.html:44
 msgid "View Product"
 msgstr "Ver Producto"
 
-#: app/templates/stores/detail.html:41
-msgid "This store has no inventory yet."
-msgstr "Esta tienda aún no tiene inventario."
+#: app/templates/stores/detail.html:60
+msgid "Role"
+msgstr "Puesto"
+
+#: app/templates/stores/detail.html:78
+msgid "No employees assigned to this store."
+msgstr "No hay empleados asignados a esta tienda."
 
 #: app/templates/stores/index.html:3
 msgid "Stores - Smart Store"
 msgstr "Tiendas - Tienda Inteligente"
 
-#: app/templates/stores/index.html:15
-#, python-format
-msgid "Added on %(date)s"
-msgstr "Añadido el %(date)s"
-
-#: app/templates/stores/index.html:16
+#: app/templates/stores/index.html:21
 msgid "View Details ->"
 msgstr "Ver Detalles ->"
 
-#: app/templates/stores/index.html:19
+#: app/templates/stores/index.html:25
 msgid "No stores found."
 msgstr "No se encontraron tiendas."
 
@@ -467,4 +519,13 @@ msgid "{len_type} values are required, but {len_value} was given."
 msgid_plural "{len_type} values are required, but {len_value} were given."
 msgstr[0] ""
 msgstr[1] ""
+
+#~ msgid "Added"
+#~ msgstr "Añadido"
+
+#~ msgid "This store has no inventory yet."
+#~ msgstr "Esta tienda aún no tiene inventario."
+
+#~ msgid "Added on %(date)s"
+#~ msgstr "Añadido el %(date)s"
 
