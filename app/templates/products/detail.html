@@ -5,9 +5,19 @@
 {% block content %}
 <div class="mb-4">
     <a href="{{ url_for('products.index') }}" class="btn btn-secondary mb-2">{{ _('<- Back to Products') }}</a>
-    <h1>{{ product.name }}</h1>
-    <p class="text-sm mb-2" style="color: var(--text-secondary); border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">${{ "%.2f"|format(product.price) }}</p>
-    <p>{{ product.description }}</p>
+    
+    <div class="flex gap-4 items-start mt-4">
+        {% if product.image %}
+        <img src="{{ product.image }}" alt="{{ product.name }}" style="width: 200px; height: 150px; object-fit: cover; border: 1px solid var(--border-color); border-radius: 4px;">
+        {% endif %}
+        <div>
+            <h1>{{ product.name }}</h1>
+            <p class="text-sm mb-2" style="color: var(--text-secondary); border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">${{ "%.2f"|format(product.price) }}</p>
+            <p><strong>{{ _('Size') }}:</strong> {{ product.size }}</p>
+            <p><strong>{{ _('Origin') }}:</strong> {{ product.origin_country }}</p>
+            <p class="text-sm mt-2">ID: <code class="text-xs">{{ product.id }}</code></p>
+        </div>
+    </div>
 </div>
 
 <h2>{{ _('Available at Stores') }}</h2>
@@ -16,9 +26,9 @@
     {% for item in product.inventory %}
     <div class="card">
         <h3>{{ item.store.name }}</h3>
-        <p>{{ item.store.location }}</p>
+        <p class="text-sm" style="color: var(--text-secondary);">{{ item.store.address_street }}, {{ item.store.address_locality }}</p>
         <div class="flex justify-between items-center mt-4">
-            <span class="text-sm" style="color: var(--text-secondary);">{{ _('%(count)s in stock', count=item.stock_quantity) }}</span>
+            <span class="text-sm" style="color: var(--text-secondary);">{{ _('%(count)s in stock', count=item.stock_count) }}</span>
             <a href="{{ url_for('stores.detail', store_id=item.store.id) }}" class="btn btn-secondary text-sm">{{ _('View Store') }}</a>
         </div>
     </div>

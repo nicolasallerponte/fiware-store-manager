@@ -8,28 +8,47 @@ _Note: Translation logic (Flask-Babel) handles UI strings only and relies on mes
 
 ```mermaid
 erDiagram
-    STORE ||--o{ INVENTORY_ITEM : "stocks"
-    PRODUCT ||--o{ INVENTORY_ITEM : "is stocked as"
+    STORE ||--o{ SHELF : "contains"
+    SHELF ||--o{ INVENTORY_ITEM : "holds"
+    STORE ||--o{ INVENTORY_ITEM : "manages"
+    PRODUCT ||--o{ INVENTORY_ITEM : "is tracked as"
 
     STORE {
-        Integer id PK
+        String id PK "URN"
         String name
-        String location
-        DateTime created_at
+        String address_street
+        String address_locality
+        String address_region
+        Float latitude
+        Float longitude
+        String image
+    }
+
+    SHELF {
+        String id PK "URN"
+        String name
+        Float latitude
+        Float longitude
+        Integer max_capacity
+        String ref_store FK
     }
 
     PRODUCT {
-        Integer id PK
+        String id PK "URN"
         String name
-        Text description
         Float price
-        DateTime created_at
+        String size
+        String image
+        String origin_country
     }
 
     INVENTORY_ITEM {
-        Integer store_id PK, FK
-        Integer product_id PK, FK
-        Integer stock_quantity
+        String id PK "URN"
+        String ref_store FK
+        String ref_product FK
+        String ref_shelf FK
+        Integer stock_count
+        Integer shelf_count
     }
 ```
 
@@ -37,30 +56,41 @@ erDiagram
 
 ### 1. `stores`
 
-Represents a physical store location within the chain.
+Represents a physical store location, aligned with the FIWARE Store model.
 
-- `id` (Integer, Primary Key): Unique identifier for the store.
-- `name` (String, max 100 chars): Display name of the store.
-- `location` (String, max 200 chars): Physical address or generic location.
-- `created_at` (DateTime): Timestamp of when the store was added to the system.
+- `id` (String URN, PK): e.g., `urn:ngsi-ld:Store:001`.
+- `name` (String): Display name.
+- `address_street`, `address_locality`, `address_region` (String): Comprehensive address fields.
+- `latitude`, `longitude` (Float): Geographic coordinates.
+- `image` (String): URL to store photo.
 
-### 2. `products`
+### 2. `shelves`
 
-Represents a unique sellable item in the master catalog.
+Represents physical storage units within a specific store.
 
-- `id` (Integer, Primary Key): Unique identifier for the product.
-- `name` (String, max 100 chars): Display name of the product.
-- `description` (Text, optional): Detailed information about the product.
-- `price` (Float): Base price of the product.
-- `created_at` (DateTime): Timestamp of when the product was added to the catalog.
+- `id` (String URN, PK): e.g., `urn:ngsi-ld:Shelf:001`.
+- `name` (String): Unit name.
+- `max_capacity` (Integer): Volume limit.
+- `ref_store` (String URN, FK): Linked store.
 
-### 3. `inventory_items` (Junction Table)
+### 3. `products`
 
-Serves as an associative entity to resolve the Many-to-Many relationship between `stores` and `products`. It tracks _how many_ of a specific product exist at a specific store.
+Represents unique catalog items.
 
-- `store_id` (Integer, Primary Key, Foreign Key): Reference to the `stores.id`.
-- `product_id` (Integer, Primary Key, Foreign Key): Reference to the `products.id`.
-- `stock_quantity` (Integer): The current count of the product available at that specific store location. Default `0`.
+- `id` (String URN, PK): e.g., `urn:ngsi-ld:Product:001`.
+- `name` (String): Item name.
+- `price` (Float): Retail price.
+- `size` (String): S/M/L/XL.
+- `origin_country` (String): Product provenance.
+
+### 4. `inventory_items`
+
+Junction entity tracking stock across stores and specific shelves.
+
+- `id` (String URN, PK): e.g., `urn:ngsi-ld:InventoryItem:001`.
+- `ref_store`, `ref_product`, `ref_shelf` (String URN, FK): Relationship references.
+- `stock_count` (Integer): Total units in store.
+- `shelf_count` (Integer): Units currently on the specific shelf.
 
 ## Testing Considerations
 

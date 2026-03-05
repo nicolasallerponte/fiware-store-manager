@@ -41,22 +41,28 @@ Landing page providing a high-level overview. Must display metric cards summariz
 
 ### 2. Stores Module (`/stores`)
 
-- **Index View:** Displays a grid or list of all active stores within the chain, showcasing their name and location.
-- **Detail View:** Deep dive into a specific store. It must show the store's metadata and a tabular view of its inventory (the products it carries, pricing, and specific stock quantities at that location).
+- **Index View:** Displays a grid of all active stores within the chain, showing their name, image, and full address.
+- **Detail View:** Deep dive into a specific store. Shows the store's metadata (URN ID, address, coordinates), an image, and a tabular view of its inventory (product name, pricing, specific stock and shelf quantities).
 
 ### 3. Products Module (`/products`)
 
-- **Index View:** A master list of all products defined in the system.
-- **Detail View:** Deep dive into a specific product. Displays product metadata (name, description, price) and enumerates which stores currently stock the product, along with the corresponding localized stock quantities.
+- **Index View:** A master list of all products defined in the system, showing URN IDs, names, pricing, size, and origin country.
+- **Detail View:** Deep dive into a specific product. Displays product metadata (URN ID, image, price, size, origin country) and enumerates which stores currently stock the product, along with localized stock counts.
 
-## Data Requirements (Initial Mock Data)
+## Data Requirements (FIWARE NGSIv2 Compliant)
 
-The system must be initialized with:
+The system aligns with the FIWARE NGSIv2 CRUD Operations tutorial structure:
 
-- Exactly 4 stores.
-- Exactly 10 distinct products.
-- A distribution of products that guarantees at least one store carries a minimum of 5 distinct products.
-- Products can belong to multiple stores (Many-to-Many inventory tracking).
+- **URN Identification:** All entity IDs follow the format `urn:ngsi-ld:{EntityType}:{number:03d}`.
+- **Entities:**
+  - **Store:** Includes name, street address, locality, region, coordinates (lat/long), and image.
+  - **Shelf:** Represents storage units within a store, linked via `ref_store`.
+  - **Product:** Includes name, price, size (S/M/L/XL), image, and origin country.
+  - **InventoryItem:** Links stores, products, and shelves, tracking `stock_count` and `shelf_count`.
+- **Sample Data:**
+  - Exactly 4 stores with real-world addresses and coordinates.
+  - Exactly 10 distinct products.
+  - Distribution ensuring realistic inventory mapping across stores.
 - Initial database is seeded via `init_db.py`.
 
 ## Testing Requirements

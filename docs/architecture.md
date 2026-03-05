@@ -68,7 +68,15 @@ The application uses Flask Blueprints to separate concerns into logical modules:
 
 ## Database Strategy
 
-A relational SQLite database is used for data persistence. `Flask-SQLAlchemy` bridges the object-oriented Python models to the underlying SQL structure. The models enforce a Many-to-Many relationship between Stores and Products via an associative junction table `InventoryItem`, allowing localized stock tracking.
+The system utilizes a relational SQLite database optimized for NGSIv2-compliant data structures. `Flask-SQLAlchemy` maps Python models to the schema.
+
+Key architectural components:
+
+- **URN-based Identity:** All primary keys are string-based URNs (e.g., `urn:ngsi-ld:Store:001`).
+- **Entity Relationships:**
+  - A `Store` possesses multiple `Shelves`.
+  - `Products` are mapped to specific `Shelves` within `Stores` via the `InventoryItem` junction table.
+  - This structure facilitates fine-grained inventory tracking (both at the store level and the specific shelf level).
 
 ## Internationalization Strategy
 

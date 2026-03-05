@@ -14,17 +14,19 @@
                 <th>{{ _('ID') }}</th>
                 <th>{{ _('Name') }}</th>
                 <th>{{ _('Price') }}</th>
-                <th>{{ _('Added') }}</th>
+                <th>{{ _('Size') }}</th>
+                <th>{{ _('Origin') }}</th>
                 <th>{{ _('Action') }}</th>
             </tr>
         </thead>
         <tbody>
             {% for product in products %}
             <tr>
-                <td>#{{ product.id }}</td>
+                <td class="text-xs"><code>{{ product.id }}</code></td>
                 <td>{{ product.name }}</td>
                 <td>${{ "%.2f"|format(product.price) }}</td>
-                <td>{{ product.created_at.strftime('%Y-%m-%d') }}</td>
+                <td>{{ product.size }}</td>
+                <td>{{ product.origin_country }}</td>
                 <td>
                     <a href="{{ url_for('products.detail', product_id=product.id) }}" class="btn btn-secondary text-sm">{{ _('View Details') }}</a>
                 </td>
