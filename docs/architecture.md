@@ -68,8 +68,8 @@ The application employs a robust testing strategy using `pytest`:
 The application uses Flask Blueprints to separate concerns into logical modules:
 
 1. `main_bp`: Handles root-level endpoints like the Dashboard overview and the locale switching route.
-2. `stores_bp`: Mounted at `/stores`. Handles listing all stores and serving detailed inventory views per store.
-3. `products_bp`: Mounted at `/products`. Handles the master list of products and showing cross-store availability for specific items.
+2. `stores_bp`: Mounted at `/stores`. Handles listing all stores, detailed inventory views, and all management (POST) routes for inventory items and shelves.
+3. `products_bp`: Mounted at `/products`. Handles the master list of products, cross-store availability, and cross-store inventory management.
 4. `employees_bp`: Mounted at `/employees`. Handles listing all employees and serving detailed profile views per staff member.
 
 ## Database Strategy

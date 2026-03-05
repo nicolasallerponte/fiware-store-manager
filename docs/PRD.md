@@ -11,8 +11,8 @@ Fiware Smart Store is a web application designed to manage a supermarket chain. 
 ## Objectives
 
 - Provide a centralized dashboard to monitor high-level system metrics (total stores, total products, total employees).
-- Offer a dedicated view for exploring registered stores and their specific inventory and staff.
-- Offer a master product list detailing all products tracked across the supermarket chain.
+- Offer a dedicated view for exploring registered stores and their specific inventory and staff, with management capabilities for shelves and stock.
+- Offer a master product list detailing all products tracked across the supermarket chain, with the ability to manage which stores stock them.
 - Offer a master employee list detailing all staff members across the chain.
 - Ensure a premium user experience utilizing a light minimalist design system with interactive features like maps and standardized image handling.
 - Provide a localized user experience through multi-language support.
@@ -43,12 +43,17 @@ Landing page providing a high-level overview. Must display metric cards summariz
 ### 2. Stores Module (`/stores`)
 
 - **Index View:** Displays a grid of all active stores within the chain, showing their name, image (with placeholders if unavailable), and full address.
-- **Detail View:** Deep dive into a specific store. Shows the store's metadata (URN ID, address, coordinates), an interactive map (Leaflet.js + OpenStreetMap) centered on the store location, an image with standardized placeholders, and a tabular view of its inventory (product name, pricing, specific stock and shelf quantities).
+- **Detail View:** Deep dive into a specific store. Shows the store's metadata (URN ID, address, coordinates), an interactive map, and an image with placeholders.
+- **Management Features:**
+  - **Inventory CRUD:** Users can add, edit, or remove products from the store's inventory via modals.
+  - **Shelf CRUD:** Users can add, edit, or remove shelves from the store via modals.
 
 ### 3. Products Module (`/products`)
 
 - **Index View:** A master list of all products defined in the system, showing URN IDs, names, pricing, size, and origin country.
-- **Detail View:** Deep dive into a specific product. Displays product metadata (URN ID, image, price, size, origin country) and enumerates which stores currently stock the product, along with localized stock counts.
+- **Detail View:** Deep dive into a specific product. Displays product metadata (URN ID, image, price, size, origin country) and enumerates which stores currently stock the product.
+- **Management Features:**
+  - **Store Inventory Management:** Users can add the product to a store or manage existing entries (edit stock/shelf, delete) via modals.
 
 ### 4. Employees Module (`/employees`)
 

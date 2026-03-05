@@ -117,3 +117,4 @@ Represents a staff member assigned to a store.
 
 - **Integrity:** The `InventoryItem` and `Employee` relationships include a cascade delete on the `Store` relationship, meaning deleting a store automatically removes its inventory records and staff records. This is verified by the test suite.
 - **In-Memory Testing:** All models are compatible with in-memory SQLite for rapid automated testing without side effects on the development database.
+- **CRUD Validation:** The models support full CRUD operations via the web interface, ensuring that URN generation and reference integrity are maintained when adding, editing, or deleting entities through the frontend modals.

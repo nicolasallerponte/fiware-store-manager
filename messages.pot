@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-03-05 21:36+0100\n"
+"POT-Creation-Date: 2026-03-05 22:12+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,24 +17,52 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.18.0\n"
 
+#: app/routes/products.py:39
+msgid "Product added to store inventory successfully."
+msgstr ""
+
+#: app/routes/products.py:50 app/routes/stores.py:50
+msgid "Inventory item updated successfully."
+msgstr ""
+
+#: app/routes/products.py:58 app/routes/stores.py:58
+msgid "Inventory item deleted successfully."
+msgstr ""
+
+#: app/routes/stores.py:39
+msgid "Product added to inventory successfully."
+msgstr ""
+
+#: app/routes/stores.py:81
+msgid "Shelf added successfully."
+msgstr ""
+
+#: app/routes/stores.py:93
+msgid "Shelf updated successfully."
+msgstr ""
+
+#: app/routes/stores.py:101
+msgid "Shelf deleted successfully."
+msgstr ""
+
 #: app/templates/base.html:6
 msgid "Smart Store"
 msgstr ""
 
-#: app/templates/base.html:76 app/templates/employees/index.html:7
-#: app/templates/stores/detail.html:53
+#: app/templates/base.html:77 app/templates/employees/index.html:7
+#: app/templates/stores/detail.html:140
 msgid "Employees"
 msgstr ""
 
-#: app/templates/base.html:77 app/templates/dashboard.html:7
+#: app/templates/base.html:78 app/templates/dashboard.html:7
 msgid "Overview"
 msgstr ""
 
-#: app/templates/base.html:78
+#: app/templates/base.html:79
 msgid "Products"
 msgstr ""
 
-#: app/templates/base.html:79 app/templates/stores/index.html:7
+#: app/templates/base.html:80 app/templates/stores/index.html:7
 msgid "Stores"
 msgstr ""
 
@@ -67,11 +95,15 @@ msgstr ""
 msgid "<- Back to Employees"
 msgstr ""
 
-#: app/templates/employees/detail.html:23
+#: app/templates/employees/detail.html:16 app/templates/employees/index.html:19
+msgid "No Photo"
+msgstr ""
+
+#: app/templates/employees/detail.html:26
 msgid "Salary"
 msgstr ""
 
-#: app/templates/employees/detail.html:27
+#: app/templates/employees/detail.html:30
 msgid "Assigned Store"
 msgstr ""
 
@@ -79,15 +111,15 @@ msgstr ""
 msgid "Employees - Smart Store"
 msgstr ""
 
-#: app/templates/employees/index.html:24
+#: app/templates/employees/index.html:27
 msgid "At"
 msgstr ""
 
-#: app/templates/employees/index.html:26 app/templates/stores/detail.html:70
+#: app/templates/employees/index.html:29 app/templates/stores/detail.html:157
 msgid "View Profile"
 msgstr ""
 
-#: app/templates/employees/index.html:30
+#: app/templates/employees/index.html:33
 msgid "No employees found."
 msgstr ""
 
@@ -100,29 +132,104 @@ msgstr ""
 msgid "<- Back to Products"
 msgstr ""
 
-#: app/templates/products/detail.html:16 app/templates/products/index.html:17
+#: app/templates/products/detail.html:16 app/templates/stores/detail.html:21
+#: app/templates/stores/index.html:19
+msgid "No Image"
+msgstr ""
+
+#: app/templates/products/detail.html:23 app/templates/products/index.html:18
 msgid "Size"
 msgstr ""
 
-#: app/templates/products/detail.html:17 app/templates/products/index.html:18
+#: app/templates/products/detail.html:24 app/templates/products/index.html:19
 msgid "Origin"
 msgstr ""
 
-#: app/templates/products/detail.html:23
+#: app/templates/products/detail.html:31
 msgid "Available at Stores"
 msgstr ""
 
-#: app/templates/products/detail.html:31 app/templates/stores/detail.html:40
+#: app/templates/products/detail.html:32 app/templates/products/detail.html:77
+#: app/templates/products/detail.html:106
+msgid "Add to Store"
+msgstr ""
+
+#: app/templates/products/detail.html:42 app/templates/products/detail.html:99
+#: app/templates/products/detail.html:130 app/templates/stores/detail.html:196
+#: app/templates/stores/detail.html:229
+msgid "Shelf"
+msgstr ""
+
+#: app/templates/products/detail.html:43 app/templates/products/detail.html:95
+#: app/templates/products/detail.html:126 app/templates/stores/detail.html:48
+#: app/templates/stores/detail.html:192 app/templates/stores/detail.html:225
+msgid "Shelf Count"
+msgstr ""
+
+#: app/templates/products/detail.html:46 app/templates/stores/detail.html:58
 #, python-format
 msgid "%(count)s in stock"
 msgstr ""
 
-#: app/templates/products/detail.html:32
-msgid "View Store"
+#: app/templates/products/detail.html:56 app/templates/stores/detail.html:71
+#: app/templates/stores/detail.html:121
+msgid "Edit"
 msgstr ""
 
-#: app/templates/products/detail.html:38
+#: app/templates/products/detail.html:62 app/templates/products/detail.html:154
+#: app/templates/stores/detail.html:77 app/templates/stores/detail.html:127
+#: app/templates/stores/detail.html:255 app/templates/stores/detail.html:337
+msgid "Delete"
+msgstr ""
+
+#: app/templates/products/detail.html:70
 msgid "This product is tracking no inventory in any store."
+msgstr ""
+
+#: app/templates/products/detail.html:82 app/templates/products/detail.html:120
+msgid "Store"
+msgstr ""
+
+#: app/templates/products/detail.html:84
+msgid "Select a store"
+msgstr ""
+
+#: app/templates/products/detail.html:91 app/templates/products/detail.html:122
+#: app/templates/stores/detail.html:47 app/templates/stores/detail.html:188
+#: app/templates/stores/detail.html:221
+msgid "Stock Count"
+msgstr ""
+
+#: app/templates/products/detail.html:101
+#: app/templates/products/detail.html:195
+msgid "Select store first"
+msgstr ""
+
+#: app/templates/products/detail.html:105
+#: app/templates/products/detail.html:136
+#: app/templates/products/detail.html:153 app/templates/stores/detail.html:204
+#: app/templates/stores/detail.html:237 app/templates/stores/detail.html:254
+#: app/templates/stores/detail.html:286 app/templates/stores/detail.html:318
+#: app/templates/stores/detail.html:336
+msgid "Cancel"
+msgstr ""
+
+#: app/templates/products/detail.html:116
+msgid "Edit Inventory"
+msgstr ""
+
+#: app/templates/products/detail.html:137 app/templates/stores/detail.html:238
+#: app/templates/stores/detail.html:319
+msgid "Save Changes"
+msgstr ""
+
+#: app/templates/products/detail.html:147
+msgid "Delete Inventory"
+msgstr ""
+
+#: app/templates/products/detail.html:151
+#, python-format
+msgid "Are you sure you want to remove this product from %(store)s?"
 msgstr ""
 
 #: app/templates/products/index.html:3
@@ -134,27 +241,33 @@ msgid "Products Master List"
 msgstr ""
 
 #: app/templates/products/index.html:14
+msgid "Image"
+msgstr ""
+
+#: app/templates/products/index.html:15
 msgid "ID"
 msgstr ""
 
-#: app/templates/products/index.html:15 app/templates/stores/detail.html:59
+#: app/templates/products/index.html:16 app/templates/stores/detail.html:100
+#: app/templates/stores/detail.html:146 app/templates/stores/detail.html:270
+#: app/templates/stores/detail.html:302
 msgid "Name"
 msgstr ""
 
-#: app/templates/products/index.html:16 app/templates/stores/detail.html:28
+#: app/templates/products/index.html:17 app/templates/stores/detail.html:46
 msgid "Price"
 msgstr ""
 
-#: app/templates/products/index.html:19 app/templates/stores/detail.html:31
-#: app/templates/stores/detail.html:61
+#: app/templates/products/index.html:20 app/templates/stores/detail.html:49
+#: app/templates/stores/detail.html:103 app/templates/stores/detail.html:148
 msgid "Action"
 msgstr ""
 
-#: app/templates/products/index.html:31
+#: app/templates/products/index.html:43
 msgid "View Details"
 msgstr ""
 
-#: app/templates/products/index.html:36
+#: app/templates/products/index.html:48
 msgid "No products found."
 msgstr ""
 
@@ -163,353 +276,129 @@ msgstr ""
 msgid "%(store_name)s - Smart Store"
 msgstr ""
 
-#: app/templates/stores/detail.html:7
+#: app/templates/stores/detail.html:12
 msgid "<- Back to Stores"
 msgstr ""
 
-#: app/templates/stores/detail.html:21
+#: app/templates/stores/detail.html:36
 msgid "Inventory"
 msgstr ""
 
-#: app/templates/stores/detail.html:27
+#: app/templates/stores/detail.html:37 app/templates/stores/detail.html:174
+msgid "Add Product to Inventory"
+msgstr ""
+
+#: app/templates/stores/detail.html:45
 msgid "Product Name"
 msgstr ""
 
-#: app/templates/stores/detail.html:29
-msgid "Stock Count"
+#: app/templates/stores/detail.html:63
+msgid "View"
 msgstr ""
 
-#: app/templates/stores/detail.html:30
-msgid "Shelf Count"
+#: app/templates/stores/detail.html:87
+msgid "No products in inventory."
 msgstr ""
 
-#: app/templates/stores/detail.html:44
-msgid "View Product"
+#: app/templates/stores/detail.html:91
+msgid "Shelves"
 msgstr ""
 
-#: app/templates/stores/detail.html:60
+#: app/templates/stores/detail.html:92 app/templates/stores/detail.html:287
+msgid "Add Shelf"
+msgstr ""
+
+#: app/templates/stores/detail.html:101
+msgid "Capacity"
+msgstr ""
+
+#: app/templates/stores/detail.html:102
+msgid "Location"
+msgstr ""
+
+#: app/templates/stores/detail.html:137
+msgid "No shelves defined for this store."
+msgstr ""
+
+#: app/templates/stores/detail.html:147
 msgid "Role"
 msgstr ""
 
-#: app/templates/stores/detail.html:78
+#: app/templates/stores/detail.html:165
 msgid "No employees assigned to this store."
+msgstr ""
+
+#: app/templates/stores/detail.html:179
+msgid "Product"
+msgstr ""
+
+#: app/templates/stores/detail.html:181
+msgid "Select a product"
+msgstr ""
+
+#: app/templates/stores/detail.html:205
+msgid "Add Product"
+msgstr ""
+
+#: app/templates/stores/detail.html:215
+msgid "Edit Inventory Item"
+msgstr ""
+
+#: app/templates/stores/detail.html:248
+msgid "Delete Inventory Item"
+msgstr ""
+
+#: app/templates/stores/detail.html:252
+#, python-format
+msgid "Are you sure you want to remove %(product)s from inventory?"
+msgstr ""
+
+#: app/templates/stores/detail.html:265
+msgid "Add New Shelf"
+msgstr ""
+
+#: app/templates/stores/detail.html:271
+msgid "e.g. Aisle 1"
+msgstr ""
+
+#: app/templates/stores/detail.html:274 app/templates/stores/detail.html:306
+msgid "Max Capacity"
+msgstr ""
+
+#: app/templates/stores/detail.html:278 app/templates/stores/detail.html:310
+msgid "Latitude"
+msgstr ""
+
+#: app/templates/stores/detail.html:282 app/templates/stores/detail.html:314
+msgid "Longitude"
+msgstr ""
+
+#: app/templates/stores/detail.html:297
+msgid "Edit Shelf"
+msgstr ""
+
+#: app/templates/stores/detail.html:329
+msgid "Delete Shelf"
+msgstr ""
+
+#: app/templates/stores/detail.html:333
+#, python-format
+msgid "Are you sure you want to delete shelf %(name)s?"
+msgstr ""
+
+#: app/templates/stores/detail.html:334
+msgid "Warning: All inventory items on this shelf will also be deleted."
 msgstr ""
 
 #: app/templates/stores/index.html:3
 msgid "Stores - Smart Store"
 msgstr ""
 
-#: app/templates/stores/index.html:21
+#: app/templates/stores/index.html:28
 msgid "View Details ->"
 msgstr ""
 
-#: app/templates/stores/index.html:25
+#: app/templates/stores/index.html:32
 msgid "No stores found."
 msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/_termui_impl.py:613
-#, python-brace-format
-msgid "{editor}: Editing failed"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/_termui_impl.py:617
-#, python-brace-format
-msgid "{editor}: Editing failed: {e}"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/core.py:1114
-#: venv/lib/python3.14/site-packages/click/core.py:1151
-#, python-brace-format
-msgid "{text} {deprecated_message}"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/core.py:1170
-msgid "Options"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/core.py:1245
-#, python-brace-format
-msgid "Got unexpected extra argument ({args})"
-msgid_plural "Got unexpected extra arguments ({args})"
-msgstr[0] ""
-msgstr[1] ""
-
-#: venv/lib/python3.14/site-packages/click/core.py:1264
-#, python-brace-format
-msgid "DeprecationWarning: The command {name!r} is deprecated.{extra_message}"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/core.py:1448
-msgid "Aborted!"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/core.py:1822
-msgid "Commands"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/core.py:1853
-msgid "Missing command."
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/core.py:1931
-#, python-brace-format
-msgid "No such command {name!r}."
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/core.py:2355
-msgid "Value must be an iterable."
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/core.py:2378
-#, python-brace-format
-msgid "Takes {nargs} values but 1 was given."
-msgid_plural "Takes {nargs} values but {len} were given."
-msgstr[0] ""
-msgstr[1] ""
-
-#: venv/lib/python3.14/site-packages/click/core.py:2567
-#, python-brace-format
-msgid ""
-"DeprecationWarning: The {param_type} {name!r} is "
-"deprecated.{extra_message}"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/core.py:3015
-#, python-brace-format
-msgid "env var: {var}"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/core.py:3018
-#, python-brace-format
-msgid "default: {default}"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/core.py:3022
-msgid "required"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/core.py:3082
-msgid "(dynamic)"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/decorators.py:465
-#, python-format
-msgid "%(prog)s, version %(version)s"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/decorators.py:522
-msgid "Show the version and exit."
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/decorators.py:548
-msgid "Show this message and exit."
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/exceptions.py:50
-#: venv/lib/python3.14/site-packages/click/exceptions.py:89
-#, python-brace-format
-msgid "Error: {message}"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/exceptions.py:81
-#, python-brace-format
-msgid "Try '{command} {option}' for help."
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/exceptions.py:130
-#, python-brace-format
-msgid "Invalid value: {message}"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/exceptions.py:132
-#, python-brace-format
-msgid "Invalid value for {param_hint}: {message}"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/exceptions.py:190
-msgid "Missing argument"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/exceptions.py:192
-msgid "Missing option"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/exceptions.py:194
-msgid "Missing parameter"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/exceptions.py:196
-#, python-brace-format
-msgid "Missing {param_type}"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/exceptions.py:203
-#, python-brace-format
-msgid "Missing parameter: {param_name}"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/exceptions.py:223
-#, python-brace-format
-msgid "No such option: {name}"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/exceptions.py:235
-#, python-brace-format
-msgid "Did you mean {possibility}?"
-msgid_plural "(Possible options: {possibilities})"
-msgstr[0] ""
-msgstr[1] ""
-
-#: venv/lib/python3.14/site-packages/click/exceptions.py:282
-msgid "unknown error"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/exceptions.py:289
-#, python-brace-format
-msgid "Could not open file {filename!r}: {message}"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/formatting.py:156
-msgid "Usage:"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/parser.py:199
-#, python-brace-format
-msgid "Argument {name!r} takes {nargs} values."
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/parser.py:381
-#, python-brace-format
-msgid "Option {name!r} does not take a value."
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/parser.py:444
-#, python-brace-format
-msgid "Option {name!r} requires an argument."
-msgid_plural "Option {name!r} requires {nargs} arguments."
-msgstr[0] ""
-msgstr[1] ""
-
-#: venv/lib/python3.14/site-packages/click/shell_completion.py:332
-msgid "Shell completion is not supported for Bash versions older than 4.4."
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/shell_completion.py:339
-msgid "Couldn't detect Bash version, shell completion is not supported."
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/termui.py:165
-msgid "Repeat for confirmation"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/termui.py:181
-msgid "Error: The value you entered was invalid."
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/termui.py:183
-#, python-brace-format
-msgid "Error: {e.message}"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/termui.py:194
-msgid "Error: The two entered values do not match."
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/termui.py:253
-msgid "Error: invalid input"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/termui.py:872
-msgid "Press any key to continue..."
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/types.py:332
-#, python-brace-format
-msgid ""
-"Choose from:\n"
-"\t{choices}"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/types.py:369
-#, python-brace-format
-msgid "{value!r} is not {choice}."
-msgid_plural "{value!r} is not one of {choices}."
-msgstr[0] ""
-msgstr[1] ""
-
-#: venv/lib/python3.14/site-packages/click/types.py:460
-#, python-brace-format
-msgid "{value!r} does not match the format {format}."
-msgid_plural "{value!r} does not match the formats {formats}."
-msgstr[0] ""
-msgstr[1] ""
-
-#: venv/lib/python3.14/site-packages/click/types.py:482
-#, python-brace-format
-msgid "{value!r} is not a valid {number_type}."
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/types.py:538
-#, python-brace-format
-msgid "{value} is not in the range {range}."
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/types.py:719
-#, python-brace-format
-msgid "{value!r} is not a valid boolean. Recognized values: {states}"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/types.py:747
-#, python-brace-format
-msgid "{value!r} is not a valid UUID."
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/types.py:937
-msgid "file"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/types.py:939
-msgid "directory"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/types.py:941
-msgid "path"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/types.py:988
-#, python-brace-format
-msgid "{name} {filename!r} does not exist."
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/types.py:997
-#, python-brace-format
-msgid "{name} {filename!r} is a file."
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/types.py:1005
-#, python-brace-format
-msgid "{name} {filename!r} is a directory."
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/types.py:1014
-#, python-brace-format
-msgid "{name} {filename!r} is not readable."
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/types.py:1023
-#, python-brace-format
-msgid "{name} {filename!r} is not writable."
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/types.py:1032
-#, python-brace-format
-msgid "{name} {filename!r} is not executable."
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/types.py:1099
-#, python-brace-format
-msgid "{len_type} values are required, but {len_value} was given."
-msgid_plural "{len_type} values are required, but {len_value} were given."
-msgstr[0] ""
-msgstr[1] ""
 

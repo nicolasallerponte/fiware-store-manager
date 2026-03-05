@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-03-05 21:36+0100\n"
+"POT-Creation-Date: 2026-03-05 23:09+0100\n"
 "PO-Revision-Date: 2026-03-05 20:35+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: gl\n"
@@ -18,24 +18,52 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.18.0\n"
 
+#: app/routes/products.py:39
+msgid "Product added to store inventory successfully."
+msgstr ""
+
+#: app/routes/products.py:50 app/routes/stores.py:50
+msgid "Inventory item updated successfully."
+msgstr ""
+
+#: app/routes/products.py:58 app/routes/stores.py:58
+msgid "Inventory item deleted successfully."
+msgstr ""
+
+#: app/routes/stores.py:39
+msgid "Product added to inventory successfully."
+msgstr ""
+
+#: app/routes/stores.py:81
+msgid "Shelf added successfully."
+msgstr ""
+
+#: app/routes/stores.py:93
+msgid "Shelf updated successfully."
+msgstr ""
+
+#: app/routes/stores.py:101
+msgid "Shelf deleted successfully."
+msgstr ""
+
 #: app/templates/base.html:6
 msgid "Smart Store"
 msgstr "Tenda Intelixente"
 
-#: app/templates/base.html:76 app/templates/employees/index.html:7
-#: app/templates/stores/detail.html:53
+#: app/templates/base.html:77 app/templates/employees/index.html:7
+#: app/templates/stores/detail.html:140
 msgid "Employees"
 msgstr "Empregados"
 
-#: app/templates/base.html:77 app/templates/dashboard.html:7
+#: app/templates/base.html:78 app/templates/dashboard.html:7
 msgid "Overview"
 msgstr "Resumo"
 
-#: app/templates/base.html:78
+#: app/templates/base.html:79
 msgid "Products"
 msgstr "Produtos"
 
-#: app/templates/base.html:79 app/templates/stores/index.html:7
+#: app/templates/base.html:80 app/templates/stores/index.html:7
 msgid "Stores"
 msgstr "Tendas"
 
@@ -69,11 +97,15 @@ msgstr "%(employee_name)s - Tenda Intelixente"
 msgid "<- Back to Employees"
 msgstr "<- Volver aos Empregados"
 
-#: app/templates/employees/detail.html:23
+#: app/templates/employees/detail.html:16 app/templates/employees/index.html:19
+msgid "No Photo"
+msgstr ""
+
+#: app/templates/employees/detail.html:26
 msgid "Salary"
 msgstr "Salario"
 
-#: app/templates/employees/detail.html:27
+#: app/templates/employees/detail.html:30
 #, fuzzy
 msgid "Assigned Store"
 msgstr "Tenda Asignada"
@@ -83,16 +115,16 @@ msgstr "Tenda Asignada"
 msgid "Employees - Smart Store"
 msgstr "Empregados - Tenda Intelixente"
 
-#: app/templates/employees/index.html:24
+#: app/templates/employees/index.html:27
 msgid "At"
 msgstr "En"
 
-#: app/templates/employees/index.html:26 app/templates/stores/detail.html:70
+#: app/templates/employees/index.html:29 app/templates/stores/detail.html:157
 #, fuzzy
 msgid "View Profile"
 msgstr "Ver Perfil"
 
-#: app/templates/employees/index.html:30
+#: app/templates/employees/index.html:33
 #, fuzzy
 msgid "No employees found."
 msgstr "Non se atoparon empregados."
@@ -106,30 +138,108 @@ msgstr "%(product_name)s - Tenda Intelixente"
 msgid "<- Back to Products"
 msgstr "<- Volver aos Produtos"
 
-#: app/templates/products/detail.html:16 app/templates/products/index.html:17
+#: app/templates/products/detail.html:16 app/templates/stores/detail.html:21
+#: app/templates/stores/index.html:19
+msgid "No Image"
+msgstr ""
+
+#: app/templates/products/detail.html:23 app/templates/products/index.html:18
 msgid "Size"
 msgstr "Tamaño"
 
-#: app/templates/products/detail.html:17 app/templates/products/index.html:18
+#: app/templates/products/detail.html:24 app/templates/products/index.html:19
 msgid "Origin"
 msgstr "Orixe"
 
-#: app/templates/products/detail.html:23
+#: app/templates/products/detail.html:31
 msgid "Available at Stores"
 msgstr "Dispoñible en tendas"
 
-#: app/templates/products/detail.html:31 app/templates/stores/detail.html:40
+#: app/templates/products/detail.html:32 app/templates/products/detail.html:77
+#: app/templates/products/detail.html:106
+#, fuzzy
+msgid "Add to Store"
+msgstr "Tenda Intelixente"
+
+#: app/templates/products/detail.html:42 app/templates/products/detail.html:99
+#: app/templates/products/detail.html:130 app/templates/stores/detail.html:196
+#: app/templates/stores/detail.html:229
+#, fuzzy
+msgid "Shelf"
+msgstr "Cantidade na Estantería"
+
+#: app/templates/products/detail.html:43 app/templates/products/detail.html:95
+#: app/templates/products/detail.html:126 app/templates/stores/detail.html:48
+#: app/templates/stores/detail.html:192 app/templates/stores/detail.html:225
+msgid "Shelf Count"
+msgstr "Cantidade na Estantería"
+
+#: app/templates/products/detail.html:46 app/templates/stores/detail.html:58
 #, python-format
 msgid "%(count)s in stock"
 msgstr "%(count)s en stock"
 
-#: app/templates/products/detail.html:32
-msgid "View Store"
-msgstr "Ver Tenda"
+#: app/templates/products/detail.html:56 app/templates/stores/detail.html:71
+#: app/templates/stores/detail.html:121
+msgid "Edit"
+msgstr ""
 
-#: app/templates/products/detail.html:38
+#: app/templates/products/detail.html:62 app/templates/products/detail.html:154
+#: app/templates/stores/detail.html:77 app/templates/stores/detail.html:127
+#: app/templates/stores/detail.html:255 app/templates/stores/detail.html:337
+msgid "Delete"
+msgstr ""
+
+#: app/templates/products/detail.html:70
 msgid "This product is tracking no inventory in any store."
 msgstr "Este produto non ten inventario en ningunha tenda."
+
+#: app/templates/products/detail.html:82 app/templates/products/detail.html:120
+#, fuzzy
+msgid "Store"
+msgstr "Tendas"
+
+#: app/templates/products/detail.html:84
+msgid "Select a store"
+msgstr "Selecciona unha tenda"
+
+#: app/templates/products/detail.html:91 app/templates/products/detail.html:122
+#: app/templates/stores/detail.html:47 app/templates/stores/detail.html:188
+#: app/templates/stores/detail.html:221
+#, fuzzy
+msgid "Stock Count"
+msgstr "Cantidade en Stock"
+
+#: app/templates/products/detail.html:101
+#: app/templates/products/detail.html:199
+msgid "Select store first"
+msgstr "Selecciona a tenda primeiro"
+
+#: app/templates/products/detail.html:105
+#: app/templates/products/detail.html:136
+#: app/templates/products/detail.html:153 app/templates/stores/detail.html:204
+#: app/templates/stores/detail.html:237 app/templates/stores/detail.html:254
+#: app/templates/stores/detail.html:286 app/templates/stores/detail.html:318
+#: app/templates/stores/detail.html:336
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: app/templates/products/detail.html:116
+msgid "Edit Inventory"
+msgstr "Editar inventario"
+
+#: app/templates/products/detail.html:137 app/templates/stores/detail.html:238
+#: app/templates/stores/detail.html:319
+msgid "Save Changes"
+msgstr "Gardar cambios"
+
+#: app/templates/products/detail.html:147
+msgid "Delete Inventory"
+msgstr "Eliminar inventario"
+
+#: app/templates/products/detail.html:151
+msgid "Are you sure you want to remove this product from"
+msgstr "Estás seguro de que queres eliminar este producto de"
 
 #: app/templates/products/index.html:3
 msgid "Products - Smart Store"
@@ -140,27 +250,33 @@ msgid "Products Master List"
 msgstr "Lista Mestra de Produtos"
 
 #: app/templates/products/index.html:14
+msgid "Image"
+msgstr ""
+
+#: app/templates/products/index.html:15
 msgid "ID"
 msgstr "ID"
 
-#: app/templates/products/index.html:15 app/templates/stores/detail.html:59
+#: app/templates/products/index.html:16 app/templates/stores/detail.html:100
+#: app/templates/stores/detail.html:146 app/templates/stores/detail.html:270
+#: app/templates/stores/detail.html:302
 msgid "Name"
 msgstr "Nome"
 
-#: app/templates/products/index.html:16 app/templates/stores/detail.html:28
+#: app/templates/products/index.html:17 app/templates/stores/detail.html:46
 msgid "Price"
 msgstr "Prezo"
 
-#: app/templates/products/index.html:19 app/templates/stores/detail.html:31
-#: app/templates/stores/detail.html:61
+#: app/templates/products/index.html:20 app/templates/stores/detail.html:49
+#: app/templates/stores/detail.html:103 app/templates/stores/detail.html:148
 msgid "Action"
 msgstr "Acción"
 
-#: app/templates/products/index.html:31
+#: app/templates/products/index.html:43
 msgid "View Details"
 msgstr "Ver Detalles"
 
-#: app/templates/products/index.html:36
+#: app/templates/products/index.html:48
 msgid "No products found."
 msgstr "Non se atoparon produtos."
 
@@ -169,48 +285,131 @@ msgstr "Non se atoparon produtos."
 msgid "%(store_name)s - Smart Store"
 msgstr "%(store_name)s - Tenda Intelixente"
 
-#: app/templates/stores/detail.html:7
+#: app/templates/stores/detail.html:12
 msgid "<- Back to Stores"
 msgstr "<- Volver ás Tendas"
 
-#: app/templates/stores/detail.html:21
+#: app/templates/stores/detail.html:36
 msgid "Inventory"
 msgstr "Inventario"
 
-#: app/templates/stores/detail.html:27
+#: app/templates/stores/detail.html:37 app/templates/stores/detail.html:174
+msgid "Add Product to Inventory"
+msgstr "Engadir producto ao inventario"
+
+#: app/templates/stores/detail.html:45
 msgid "Product Name"
 msgstr "Nome do Produto"
 
-#: app/templates/stores/detail.html:29
+#: app/templates/stores/detail.html:63
 #, fuzzy
-msgid "Stock Count"
-msgstr "Cantidade en Stock"
+msgid "View"
+msgstr "Resumo"
 
-#: app/templates/stores/detail.html:30
-msgid "Shelf Count"
-msgstr "Cantidade na Estantería"
+#: app/templates/stores/detail.html:87
+#, fuzzy
+msgid "No products in inventory."
+msgstr "Non se atoparon produtos."
 
-#: app/templates/stores/detail.html:44
-msgid "View Product"
-msgstr "Ver Produto"
+#: app/templates/stores/detail.html:91
+msgid "Shelves"
+msgstr "Estanterías"
 
-#: app/templates/stores/detail.html:60
+#: app/templates/stores/detail.html:92 app/templates/stores/detail.html:287
+msgid "Add Shelf"
+msgstr "Engadir estantería"
+
+#: app/templates/stores/detail.html:101
+msgid "Capacity"
+msgstr "Capacidade"
+
+#: app/templates/stores/detail.html:102
+msgid "Location"
+msgstr "Ubicación"
+
+#: app/templates/stores/detail.html:137
+msgid "No shelves defined for this store."
+msgstr "Non hai estanterías definidas para esta tenda."
+
+#: app/templates/stores/detail.html:147
 msgid "Role"
 msgstr "Posto"
 
-#: app/templates/stores/detail.html:78
+#: app/templates/stores/detail.html:165
 msgid "No employees assigned to this store."
 msgstr "Non hai empregados asignados a esta tenda."
+
+#: app/templates/stores/detail.html:179
+#, fuzzy
+msgid "Product"
+msgstr "Produtos"
+
+#: app/templates/stores/detail.html:181
+#, fuzzy
+msgid "Select a product"
+msgstr "Ver todos os produtos"
+
+#: app/templates/stores/detail.html:205
+msgid "Add Product"
+msgstr "Engadir producto"
+
+#: app/templates/stores/detail.html:215
+msgid "Edit Inventory Item"
+msgstr "Editar elemento de inventario"
+
+#: app/templates/stores/detail.html:248
+msgid "Delete Inventory Item"
+msgstr "Eliminar elemento de inventario"
+
+#: app/templates/stores/detail.html:252
+msgid "Are you sure you want to remove this item from inventory?"
+msgstr "Estás seguro de que queres eliminar este artigo do inventario?"
+
+#: app/templates/stores/detail.html:265
+msgid "Add New Shelf"
+msgstr "Engadir nova estantería"
+
+#: app/templates/stores/detail.html:271
+msgid "e.g. Aisle 1"
+msgstr ""
+
+#: app/templates/stores/detail.html:274 app/templates/stores/detail.html:306
+msgid "Max Capacity"
+msgstr ""
+
+#: app/templates/stores/detail.html:278 app/templates/stores/detail.html:310
+msgid "Latitude"
+msgstr ""
+
+#: app/templates/stores/detail.html:282 app/templates/stores/detail.html:314
+msgid "Longitude"
+msgstr ""
+
+#: app/templates/stores/detail.html:297
+msgid "Edit Shelf"
+msgstr ""
+
+#: app/templates/stores/detail.html:329
+msgid "Delete Shelf"
+msgstr ""
+
+#: app/templates/stores/detail.html:333
+msgid "Are you sure you want to delete shelf?"
+msgstr "Estás seguro de que queres eliminar a estantería?"
+
+#: app/templates/stores/detail.html:334
+msgid "Warning: All inventory items on this shelf will also be deleted."
+msgstr ""
 
 #: app/templates/stores/index.html:3
 msgid "Stores - Smart Store"
 msgstr "Tendas - Tenda Intelixente"
 
-#: app/templates/stores/index.html:21
+#: app/templates/stores/index.html:28
 msgid "View Details ->"
 msgstr "Ver Detalles ->"
 
-#: app/templates/stores/index.html:25
+#: app/templates/stores/index.html:32
 msgid "No stores found."
 msgstr "Non se atoparon tendas."
 
@@ -231,8 +430,9 @@ msgid "{text} {deprecated_message}"
 msgstr ""
 
 #: venv/lib/python3.14/site-packages/click/core.py:1170
+#, fuzzy
 msgid "Options"
-msgstr ""
+msgstr "Ubicación"
 
 #: venv/lib/python3.14/site-packages/click/core.py:1245
 #, python-brace-format
@@ -476,12 +676,14 @@ msgid "file"
 msgstr ""
 
 #: venv/lib/python3.14/site-packages/click/types.py:939
+#, fuzzy
 msgid "directory"
-msgstr ""
+msgstr "Inventario"
 
 #: venv/lib/python3.14/site-packages/click/types.py:941
+#, fuzzy
 msgid "path"
-msgstr ""
+msgstr "En"
 
 #: venv/lib/python3.14/site-packages/click/types.py:988
 #, python-brace-format
@@ -528,4 +730,217 @@ msgstr[1] ""
 
 #~ msgid "Added on %(date)s"
 #~ msgstr "Engadido o %(date)s"
+
+#~ msgid "View Store"
+#~ msgstr "Ver Tenda"
+
+#~ msgid "View Product"
+#~ msgstr "Ver Produto"
+
+#~ msgid "{editor}: Editing failed"
+#~ msgstr ""
+
+#~ msgid "{editor}: Editing failed: {e}"
+#~ msgstr ""
+
+#~ msgid "{text} {deprecated_message}"
+#~ msgstr ""
+
+#~ msgid "Options"
+#~ msgstr ""
+
+#~ msgid "Got unexpected extra argument ({args})"
+#~ msgid_plural "Got unexpected extra arguments ({args})"
+#~ msgstr[0] ""
+#~ msgstr[1] ""
+
+#~ msgid "DeprecationWarning: The command {name!r} is deprecated.{extra_message}"
+#~ msgstr ""
+
+#~ msgid "Aborted!"
+#~ msgstr ""
+
+#~ msgid "Commands"
+#~ msgstr ""
+
+#~ msgid "Missing command."
+#~ msgstr ""
+
+#~ msgid "No such command {name!r}."
+#~ msgstr ""
+
+#~ msgid "Value must be an iterable."
+#~ msgstr ""
+
+#~ msgid "Takes {nargs} values but 1 was given."
+#~ msgid_plural "Takes {nargs} values but {len} were given."
+#~ msgstr[0] ""
+#~ msgstr[1] ""
+
+#~ msgid ""
+#~ "DeprecationWarning: The {param_type} {name!r} "
+#~ "is deprecated.{extra_message}"
+#~ msgstr ""
+
+#~ msgid "env var: {var}"
+#~ msgstr ""
+
+#~ msgid "default: {default}"
+#~ msgstr ""
+
+#~ msgid "required"
+#~ msgstr ""
+
+#~ msgid "(dynamic)"
+#~ msgstr ""
+
+#~ msgid "%(prog)s, version %(version)s"
+#~ msgstr ""
+
+#~ msgid "Show the version and exit."
+#~ msgstr ""
+
+#~ msgid "Show this message and exit."
+#~ msgstr ""
+
+#~ msgid "Error: {message}"
+#~ msgstr ""
+
+#~ msgid "Try '{command} {option}' for help."
+#~ msgstr ""
+
+#~ msgid "Invalid value: {message}"
+#~ msgstr ""
+
+#~ msgid "Invalid value for {param_hint}: {message}"
+#~ msgstr ""
+
+#~ msgid "Missing argument"
+#~ msgstr ""
+
+#~ msgid "Missing option"
+#~ msgstr ""
+
+#~ msgid "Missing parameter"
+#~ msgstr ""
+
+#~ msgid "Missing {param_type}"
+#~ msgstr ""
+
+#~ msgid "Missing parameter: {param_name}"
+#~ msgstr ""
+
+#~ msgid "No such option: {name}"
+#~ msgstr ""
+
+#~ msgid "Did you mean {possibility}?"
+#~ msgid_plural "(Possible options: {possibilities})"
+#~ msgstr[0] ""
+#~ msgstr[1] ""
+
+#~ msgid "unknown error"
+#~ msgstr ""
+
+#~ msgid "Could not open file {filename!r}: {message}"
+#~ msgstr ""
+
+#~ msgid "Usage:"
+#~ msgstr ""
+
+#~ msgid "Argument {name!r} takes {nargs} values."
+#~ msgstr ""
+
+#~ msgid "Option {name!r} does not take a value."
+#~ msgstr ""
+
+#~ msgid "Option {name!r} requires an argument."
+#~ msgid_plural "Option {name!r} requires {nargs} arguments."
+#~ msgstr[0] ""
+#~ msgstr[1] ""
+
+#~ msgid "Shell completion is not supported for Bash versions older than 4.4."
+#~ msgstr ""
+
+#~ msgid "Couldn't detect Bash version, shell completion is not supported."
+#~ msgstr ""
+
+#~ msgid "Repeat for confirmation"
+#~ msgstr ""
+
+#~ msgid "Error: The value you entered was invalid."
+#~ msgstr ""
+
+#~ msgid "Error: {e.message}"
+#~ msgstr ""
+
+#~ msgid "Error: The two entered values do not match."
+#~ msgstr ""
+
+#~ msgid "Error: invalid input"
+#~ msgstr ""
+
+#~ msgid "Press any key to continue..."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Choose from:\n"
+#~ "\t{choices}"
+#~ msgstr ""
+
+#~ msgid "{value!r} is not {choice}."
+#~ msgid_plural "{value!r} is not one of {choices}."
+#~ msgstr[0] ""
+#~ msgstr[1] ""
+
+#~ msgid "{value!r} does not match the format {format}."
+#~ msgid_plural "{value!r} does not match the formats {formats}."
+#~ msgstr[0] ""
+#~ msgstr[1] ""
+
+#~ msgid "{value!r} is not a valid {number_type}."
+#~ msgstr ""
+
+#~ msgid "{value} is not in the range {range}."
+#~ msgstr ""
+
+#~ msgid "{value!r} is not a valid boolean. Recognized values: {states}"
+#~ msgstr ""
+
+#~ msgid "{value!r} is not a valid UUID."
+#~ msgstr ""
+
+#~ msgid "file"
+#~ msgstr ""
+
+#~ msgid "directory"
+#~ msgstr ""
+
+#~ msgid "path"
+#~ msgstr ""
+
+#~ msgid "{name} {filename!r} does not exist."
+#~ msgstr ""
+
+#~ msgid "{name} {filename!r} is a file."
+#~ msgstr ""
+
+#~ msgid "{name} {filename!r} is a directory."
+#~ msgstr ""
+
+#~ msgid "{name} {filename!r} is not readable."
+#~ msgstr ""
+
+#~ msgid "{name} {filename!r} is not writable."
+#~ msgstr ""
+
+#~ msgid "{name} {filename!r} is not executable."
+#~ msgstr ""
+
+#~ msgid "{len_type} values are required, but {len_value} was given."
+#~ msgid_plural "{len_type} values are required, but {len_value} were given."
+#~ msgstr[0] ""
+#~ msgstr[1] ""
+
+#~ msgid "Are you sure you want to delete shelf %(name)s?"
+#~ msgstr ""
 

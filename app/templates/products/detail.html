@@ -27,16 +27,41 @@
     </div>
 </div>
 
-<h2>{{ _('Available at Stores') }}</h2>
+<div class="flex justify-between items-center mb-4">
+    <h2>{{ _('Available at Stores') }}</h2>
+    <button class="btn btn-primary text-sm" onclick="openModal('addToStoreModal')">{{ _('Add to Store') }}</button>
+</div>
+
 {% if product.inventory %}
 <div class="grid mt-4">
     {% for item in product.inventory %}
     <div class="card">
         <h3>{{ item.store.name }}</h3>
         <p class="text-sm" style="color: var(--text-secondary);">{{ item.store.address_street }}, {{ item.store.address_locality }}</p>
+        <div class="mt-4">
+            <p class="text-xs"><strong>{{ _('Shelf') }}:</strong> {{ item.shelf.name }}</p>
+            <p class="text-xs"><strong>{{ _('Shelf Count') }}:</strong> {{ item.shelf_count }}</p>
+        </div>
         <div class="flex justify-between items-center mt-4">
             <span class="text-sm" style="color: var(--text-secondary);">{{ _('%(count)s in stock', count=item.stock_count) }}</span>
-            <a href="{{ url_for('stores.detail', store_id=item.store.id) }}" class="btn btn-secondary text-sm">{{ _('View Store') }}</a>
+            <div class="flex gap-2">
+                <button class="btn btn-secondary text-sm" 
+                        data-id="{{ item.id }}"
+                        data-store-id="{{ item.store.id }}"
+                        data-store-name="{{ item.store.name }}"
+                        data-stock="{{ item.stock_count }}"
+                        data-shelf-count="{{ item.shelf_count }}"
+                        data-ref-shelf="{{ item.ref_shelf }}"
+                        onclick="prepareAndOpenEditInventoryModal(this)">
+                    {{ _('Edit') }}
+                </button>
+                <button class="btn btn-secondary text-sm" 
+                        data-id="{{ item.id }}"
+                        data-store-name="{{ item.store.name }}"
+                        onclick="prepareAndOpenDeleteInventoryModal(this)">
+                    {{ _('Delete') }}
+                </button>
+            </div>
         </div>
     </div>
     {% endfor %}
@@ -44,4 +69,179 @@
 {% else %}
 <p>{{ _('This product is tracking no inventory in any store.') }}</p>
 {% endif %}
+
+<!-- Add to Store Modal -->
+<div id="addToStoreModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>{{ _('Add to Store') }}</h2>
+            <span class="close-modal" onclick="closeModal('addToStoreModal')">&times;</span>
+        </div>
+        <form action="{{ url_for('products.add_inventory', product_id=product.id) }}" method="POST">
+            <div class="form-group">
+                <label for="store_id">{{ _('Store') }}</label>
+                <select name="store_id" id="store_id" class="form-control" onchange="updateShelves(this.value, 'ref_shelf')" required>
+                    <option value="">{{ _('Select a store') }}</option>
+                    {% for store in all_stores %}
+                    <option value="{{ store.id }}">{{ store.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="stock_count">{{ _('Stock Count') }}</label>
+                <input type="number" name="stock_count" id="stock_count" class="form-control" value="0" min="0" required>
+            </div>
+            <div class="form-group">
+                <label for="shelf_count">{{ _('Shelf Count') }}</label>
+                <input type="number" name="shelf_count" id="shelf_count" class="form-control" value="0" min="0" required>
+            </div>
+            <div class="form-group">
+                <label for="ref_shelf">{{ _('Shelf') }}</label>
+                <select name="ref_shelf" id="ref_shelf" class="form-control" required disabled>
+                    <option value="">{{ _('Select store first') }}</option>
+                </select>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="closeModal('addToStoreModal')">{{ _('Cancel') }}</button>
+                <button type="submit" class="btn btn-primary">{{ _('Add to Store') }}</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Edit Inventory Modal -->
+<div id="editInventoryModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>{{ _('Edit Inventory') }}</h2>
+            <span class="close-modal" onclick="closeModal('editInventoryModal')">&times;</span>
+        </div>
+        <form id="editInventoryForm" method="POST">
+            <p class="mb-4"><strong>{{ _('Store') }}: </strong><span id="editStoreName"></span></p>
+            <div class="form-group">
+                <label for="edit_stock_count">{{ _('Stock Count') }}</label>
+                <input type="number" name="stock_count" id="edit_stock_count" class="form-control" min="0" required>
+            </div>
+            <div class="form-group">
+                <label for="edit_shelf_count">{{ _('Shelf Count') }}</label>
+                <input type="number" name="shelf_count" id="edit_shelf_count" class="form-control" min="0" required>
+            </div>
+            <div class="form-group">
+                <label for="edit_ref_shelf">{{ _('Shelf') }}</label>
+                <select name="ref_shelf" id="edit_ref_shelf" class="form-control" required>
+                    <!-- Populated by JS -->
+                </select>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="closeModal('editInventoryModal')">{{ _('Cancel') }}</button>
+                <button type="submit" class="btn btn-primary">{{ _('Save Changes') }}</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Delete Inventory Modal -->
+<div id="deleteInventoryModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>{{ _('Delete Inventory') }}</h2>
+            <span class="close-modal" onclick="closeModal('deleteInventoryModal')">&times;</span>
+        </div>
+        <form id="deleteInventoryForm" method="POST">
+            <p>{{ _('Are you sure you want to remove this product from') }} <strong id="deleteStoreName"></strong>?</p>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="closeModal('deleteInventoryModal')">{{ _('Cancel') }}</button>
+                <button type="submit" class="btn btn-primary" style="border-color: #ff4444; color: #ff4444;" onmouseover="this.style.backgroundColor='#ff4444'; this.style.color='white'" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#ff4444'">{{ _('Delete') }}</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script id="store-shelves-data" type="application/json">
+{
+    {% for store in all_stores %}
+    "{{ store.id }}": [
+        {% for shelf in store.shelves %}
+        {"id": "{{ shelf.id }}", "name": "{{ shelf.name }}"}{% if not loop.last %},{% endif %}
+        {% endfor %}
+    ]{% if not loop.last %},{% endif %}
+    {% endfor %}
+}
+</script>
+
+<script>
+    const storeShelves = JSON.parse(document.getElementById('store-shelves-data').textContent);
+
+    function openModal(id) {
+        document.getElementById(id).style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(id) {
+        document.getElementById(id).style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+
+    window.onclick = function(event) {
+        if (event.target.className === 'modal') {
+            event.target.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    }
+
+    function updateShelves(storeId, shelfSelectId, currentShelfId = null) {
+        const select = document.getElementById(shelfSelectId);
+        select.innerHTML = '';
+        
+        if (!storeId || !storeShelves[storeId]) {
+            const opt = document.createElement('option');
+            opt.value = "";
+            opt.textContent = "{{ _('Select store first') }}";
+            select.appendChild(opt);
+            select.disabled = true;
+            return;
+        }
+        
+        select.disabled = false;
+        storeShelves[storeId].forEach(shelf => {
+            const opt = document.createElement('option');
+            opt.value = shelf.id;
+            opt.textContent = shelf.name;
+            if (shelf.id === currentShelfId) opt.selected = true;
+            select.appendChild(opt);
+        });
+    }
+
+    function prepareAndOpenEditInventoryModal(btn) {
+        const id = btn.dataset.id;
+        const storeId = btn.dataset.storeId;
+        const storeName = btn.dataset.storeName;
+        const stock = btn.dataset.stock;
+        const shelfCount = btn.dataset.shelfCount;
+        const refShelf = btn.dataset.refShelf;
+        
+        const form = document.getElementById('editInventoryForm');
+        let url = "{{ url_for('products.edit_inventory', product_id=product.id, item_id='placeholder') }}";
+        form.action = url.replace('placeholder', encodeURIComponent(id));
+        
+        document.getElementById('editStoreName').textContent = storeName;
+        document.getElementById('edit_stock_count').value = stock;
+        document.getElementById('edit_shelf_count').value = shelfCount;
+        
+        updateShelves(storeId, 'edit_ref_shelf', refShelf);
+        openModal('editInventoryModal');
+    }
+
+    function prepareAndOpenDeleteInventoryModal(btn) {
+        const id = btn.dataset.id;
+        const storeName = btn.dataset.storeName;
+        
+        const form = document.getElementById('deleteInventoryForm');
+        let url = "{{ url_for('products.delete_inventory', product_id=product.id, item_id='placeholder') }}";
+        form.action = url.replace('placeholder', encodeURIComponent(id));
+        
+        document.getElementById('deleteStoreName').textContent = storeName;
+        openModal('deleteInventoryModal');
+    }
+</script>
 {% endblock %}

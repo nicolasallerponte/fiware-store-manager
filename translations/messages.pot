@@ -1,18 +1,17 @@
-# English translations for PROJECT.
+# Translations template for PROJECT.
 # Copyright (C) 2026 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2026-03-05 23:09+0100\n"
-"PO-Revision-Date: 2026-03-05 20:35+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: en\n"
-"Language-Team: en <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,31 +19,31 @@ msgstr ""
 
 #: app/routes/products.py:39
 msgid "Product added to store inventory successfully."
-msgstr "Product added to store inventory successfully."
+msgstr ""
 
 #: app/routes/products.py:50 app/routes/stores.py:50
 msgid "Inventory item updated successfully."
-msgstr "Inventory item updated successfully."
+msgstr ""
 
 #: app/routes/products.py:58 app/routes/stores.py:58
 msgid "Inventory item deleted successfully."
-msgstr "Inventory item deleted successfully."
+msgstr ""
 
 #: app/routes/stores.py:39
 msgid "Product added to inventory successfully."
-msgstr "Product added to inventory successfully."
+msgstr ""
 
 #: app/routes/stores.py:81
 msgid "Shelf added successfully."
-msgstr "Shelf added successfully."
+msgstr ""
 
 #: app/routes/stores.py:93
 msgid "Shelf updated successfully."
-msgstr "Shelf updated successfully."
+msgstr ""
 
 #: app/routes/stores.py:101
 msgid "Shelf deleted successfully."
-msgstr "Shelf deleted successfully."
+msgstr ""
 
 #: app/templates/base.html:6
 msgid "Smart Store"
@@ -53,7 +52,7 @@ msgstr ""
 #: app/templates/base.html:77 app/templates/employees/index.html:7
 #: app/templates/stores/detail.html:140
 msgid "Employees"
-msgstr "Employees"
+msgstr ""
 
 #: app/templates/base.html:78 app/templates/dashboard.html:7
 msgid "Overview"
@@ -90,11 +89,11 @@ msgstr ""
 #: app/templates/employees/detail.html:3
 #, python-format
 msgid "%(employee_name)s - Smart Store"
-msgstr "%(employee_name)s - Smart Store"
+msgstr ""
 
 #: app/templates/employees/detail.html:7
 msgid "<- Back to Employees"
-msgstr "<- Back to Employees"
+msgstr ""
 
 #: app/templates/employees/detail.html:16 app/templates/employees/index.html:19
 msgid "No Photo"
@@ -102,27 +101,27 @@ msgstr ""
 
 #: app/templates/employees/detail.html:26
 msgid "Salary"
-msgstr "Salary"
+msgstr ""
 
 #: app/templates/employees/detail.html:30
 msgid "Assigned Store"
-msgstr "Assigned Store"
+msgstr ""
 
 #: app/templates/employees/index.html:3
 msgid "Employees - Smart Store"
-msgstr "Employees - Smart Store"
+msgstr ""
 
 #: app/templates/employees/index.html:27
 msgid "At"
-msgstr "At"
+msgstr ""
 
 #: app/templates/employees/index.html:29 app/templates/stores/detail.html:157
 msgid "View Profile"
-msgstr "View Profile"
+msgstr ""
 
 #: app/templates/employees/index.html:33
 msgid "No employees found."
-msgstr "No employees found."
+msgstr ""
 
 #: app/templates/products/detail.html:3
 #, python-format
@@ -140,11 +139,11 @@ msgstr ""
 
 #: app/templates/products/detail.html:23 app/templates/products/index.html:18
 msgid "Size"
-msgstr "Size"
+msgstr ""
 
 #: app/templates/products/detail.html:24 app/templates/products/index.html:19
 msgid "Origin"
-msgstr "Origin"
+msgstr ""
 
 #: app/templates/products/detail.html:31
 msgid "Available at Stores"
@@ -153,35 +152,35 @@ msgstr ""
 #: app/templates/products/detail.html:32 app/templates/products/detail.html:77
 #: app/templates/products/detail.html:106
 msgid "Add to Store"
-msgstr "Add to Store"
+msgstr ""
 
 #: app/templates/products/detail.html:42 app/templates/products/detail.html:99
 #: app/templates/products/detail.html:130 app/templates/stores/detail.html:196
 #: app/templates/stores/detail.html:229
 msgid "Shelf"
-msgstr "Shelf"
+msgstr ""
 
 #: app/templates/products/detail.html:43 app/templates/products/detail.html:95
 #: app/templates/products/detail.html:126 app/templates/stores/detail.html:48
 #: app/templates/stores/detail.html:192 app/templates/stores/detail.html:225
 msgid "Shelf Count"
-msgstr "Shelf Count"
+msgstr ""
 
 #: app/templates/products/detail.html:46 app/templates/stores/detail.html:58
 #, python-format
 msgid "%(count)s in stock"
-msgstr "%(count)s in stock"
+msgstr ""
 
 #: app/templates/products/detail.html:56 app/templates/stores/detail.html:71
 #: app/templates/stores/detail.html:121
 msgid "Edit"
-msgstr "Edit"
+msgstr ""
 
 #: app/templates/products/detail.html:62 app/templates/products/detail.html:154
 #: app/templates/stores/detail.html:77 app/templates/stores/detail.html:127
 #: app/templates/stores/detail.html:255 app/templates/stores/detail.html:337
 msgid "Delete"
-msgstr "Delete"
+msgstr ""
 
 #: app/templates/products/detail.html:70
 msgid "This product is tracking no inventory in any store."
@@ -199,7 +198,7 @@ msgstr ""
 #: app/templates/stores/detail.html:47 app/templates/stores/detail.html:188
 #: app/templates/stores/detail.html:221
 msgid "Stock Count"
-msgstr "Stock Count"
+msgstr ""
 
 #: app/templates/products/detail.html:101
 #: app/templates/products/detail.html:199
@@ -213,7 +212,7 @@ msgstr ""
 #: app/templates/stores/detail.html:286 app/templates/stores/detail.html:318
 #: app/templates/stores/detail.html:336
 msgid "Cancel"
-msgstr "Cancel"
+msgstr ""
 
 #: app/templates/products/detail.html:116
 msgid "Edit Inventory"
@@ -222,7 +221,7 @@ msgstr ""
 #: app/templates/products/detail.html:137 app/templates/stores/detail.html:238
 #: app/templates/stores/detail.html:319
 msgid "Save Changes"
-msgstr "Save Changes"
+msgstr ""
 
 #: app/templates/products/detail.html:147
 msgid "Delete Inventory"
@@ -286,7 +285,7 @@ msgstr ""
 
 #: app/templates/stores/detail.html:37 app/templates/stores/detail.html:174
 msgid "Add Product to Inventory"
-msgstr "Add Product to Inventory"
+msgstr ""
 
 #: app/templates/stores/detail.html:45
 msgid "Product Name"
@@ -306,7 +305,7 @@ msgstr ""
 
 #: app/templates/stores/detail.html:92 app/templates/stores/detail.html:287
 msgid "Add Shelf"
-msgstr "Add Shelf"
+msgstr ""
 
 #: app/templates/stores/detail.html:101
 msgid "Capacity"
@@ -318,15 +317,15 @@ msgstr ""
 
 #: app/templates/stores/detail.html:137
 msgid "No shelves defined for this store."
-msgstr "No shelves defined for this store."
+msgstr ""
 
 #: app/templates/stores/detail.html:147
 msgid "Role"
-msgstr "Role"
+msgstr ""
 
 #: app/templates/stores/detail.html:165
 msgid "No employees assigned to this store."
-msgstr "No employees assigned to this store."
+msgstr ""
 
 #: app/templates/stores/detail.html:179
 msgid "Product"
@@ -338,15 +337,15 @@ msgstr ""
 
 #: app/templates/stores/detail.html:205
 msgid "Add Product"
-msgstr "Add Product"
+msgstr ""
 
 #: app/templates/stores/detail.html:215
 msgid "Edit Inventory Item"
-msgstr "Edit Inventory Item"
+msgstr ""
 
 #: app/templates/stores/detail.html:248
 msgid "Delete Inventory Item"
-msgstr "Delete Inventory Item"
+msgstr ""
 
 #: app/templates/stores/detail.html:252
 msgid "Are you sure you want to remove this item from inventory?"
@@ -386,7 +385,7 @@ msgstr ""
 
 #: app/templates/stores/detail.html:334
 msgid "Warning: All inventory items on this shelf will also be deleted."
-msgstr "Warning: All inventory items on this shelf will also be deleted."
+msgstr ""
 
 #: app/templates/stores/index.html:3
 msgid "Stores - Smart Store"
@@ -666,9 +665,8 @@ msgid "directory"
 msgstr ""
 
 #: venv/lib/python3.14/site-packages/click/types.py:941
-#, fuzzy
 msgid "path"
-msgstr "At"
+msgstr ""
 
 #: venv/lib/python3.14/site-packages/click/types.py:988
 #, python-brace-format
@@ -706,235 +704,4 @@ msgid "{len_type} values are required, but {len_value} was given."
 msgid_plural "{len_type} values are required, but {len_value} were given."
 msgstr[0] ""
 msgstr[1] ""
-
-#~ msgid "Added"
-#~ msgstr ""
-
-#~ msgid "Stock Quantity"
-#~ msgstr ""
-
-#~ msgid "This store has no inventory yet."
-#~ msgstr ""
-
-#~ msgid "Added on %(date)s"
-#~ msgstr ""
-
-#~ msgid "View Store"
-#~ msgstr ""
-
-#~ msgid "View Product"
-#~ msgstr ""
-
-#~ msgid "{editor}: Editing failed"
-#~ msgstr ""
-
-#~ msgid "{editor}: Editing failed: {e}"
-#~ msgstr ""
-
-#~ msgid "{text} {deprecated_message}"
-#~ msgstr ""
-
-#~ msgid "Options"
-#~ msgstr ""
-
-#~ msgid "Got unexpected extra argument ({args})"
-#~ msgid_plural "Got unexpected extra arguments ({args})"
-#~ msgstr[0] ""
-#~ msgstr[1] ""
-
-#~ msgid "DeprecationWarning: The command {name!r} is deprecated.{extra_message}"
-#~ msgstr ""
-
-#~ msgid "Aborted!"
-#~ msgstr ""
-
-#~ msgid "Commands"
-#~ msgstr ""
-
-#~ msgid "Missing command."
-#~ msgstr ""
-
-#~ msgid "No such command {name!r}."
-#~ msgstr ""
-
-#~ msgid "Value must be an iterable."
-#~ msgstr ""
-
-#~ msgid "Takes {nargs} values but 1 was given."
-#~ msgid_plural "Takes {nargs} values but {len} were given."
-#~ msgstr[0] ""
-#~ msgstr[1] ""
-
-#~ msgid ""
-#~ "DeprecationWarning: The {param_type} {name!r} "
-#~ "is deprecated.{extra_message}"
-#~ msgstr ""
-
-#~ msgid "env var: {var}"
-#~ msgstr ""
-
-#~ msgid "default: {default}"
-#~ msgstr ""
-
-#~ msgid "required"
-#~ msgstr ""
-
-#~ msgid "(dynamic)"
-#~ msgstr ""
-
-#~ msgid "%(prog)s, version %(version)s"
-#~ msgstr ""
-
-#~ msgid "Show the version and exit."
-#~ msgstr ""
-
-#~ msgid "Show this message and exit."
-#~ msgstr ""
-
-#~ msgid "Error: {message}"
-#~ msgstr ""
-
-#~ msgid "Try '{command} {option}' for help."
-#~ msgstr ""
-
-#~ msgid "Invalid value: {message}"
-#~ msgstr ""
-
-#~ msgid "Invalid value for {param_hint}: {message}"
-#~ msgstr ""
-
-#~ msgid "Missing argument"
-#~ msgstr ""
-
-#~ msgid "Missing option"
-#~ msgstr ""
-
-#~ msgid "Missing parameter"
-#~ msgstr ""
-
-#~ msgid "Missing {param_type}"
-#~ msgstr ""
-
-#~ msgid "Missing parameter: {param_name}"
-#~ msgstr ""
-
-#~ msgid "No such option: {name}"
-#~ msgstr ""
-
-#~ msgid "Did you mean {possibility}?"
-#~ msgid_plural "(Possible options: {possibilities})"
-#~ msgstr[0] ""
-#~ msgstr[1] ""
-
-#~ msgid "unknown error"
-#~ msgstr ""
-
-#~ msgid "Could not open file {filename!r}: {message}"
-#~ msgstr ""
-
-#~ msgid "Usage:"
-#~ msgstr ""
-
-#~ msgid "Argument {name!r} takes {nargs} values."
-#~ msgstr ""
-
-#~ msgid "Option {name!r} does not take a value."
-#~ msgstr ""
-
-#~ msgid "Option {name!r} requires an argument."
-#~ msgid_plural "Option {name!r} requires {nargs} arguments."
-#~ msgstr[0] ""
-#~ msgstr[1] ""
-
-#~ msgid "Shell completion is not supported for Bash versions older than 4.4."
-#~ msgstr ""
-
-#~ msgid "Couldn't detect Bash version, shell completion is not supported."
-#~ msgstr ""
-
-#~ msgid "Repeat for confirmation"
-#~ msgstr ""
-
-#~ msgid "Error: The value you entered was invalid."
-#~ msgstr ""
-
-#~ msgid "Error: {e.message}"
-#~ msgstr ""
-
-#~ msgid "Error: The two entered values do not match."
-#~ msgstr ""
-
-#~ msgid "Error: invalid input"
-#~ msgstr ""
-
-#~ msgid "Press any key to continue..."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Choose from:\n"
-#~ "\t{choices}"
-#~ msgstr ""
-
-#~ msgid "{value!r} is not {choice}."
-#~ msgid_plural "{value!r} is not one of {choices}."
-#~ msgstr[0] ""
-#~ msgstr[1] ""
-
-#~ msgid "{value!r} does not match the format {format}."
-#~ msgid_plural "{value!r} does not match the formats {formats}."
-#~ msgstr[0] ""
-#~ msgstr[1] ""
-
-#~ msgid "{value!r} is not a valid {number_type}."
-#~ msgstr ""
-
-#~ msgid "{value} is not in the range {range}."
-#~ msgstr ""
-
-#~ msgid "{value!r} is not a valid boolean. Recognized values: {states}"
-#~ msgstr ""
-
-#~ msgid "{value!r} is not a valid UUID."
-#~ msgstr ""
-
-#~ msgid "file"
-#~ msgstr ""
-
-#~ msgid "directory"
-#~ msgstr ""
-
-#~ msgid "path"
-#~ msgstr ""
-
-#~ msgid "{name} {filename!r} does not exist."
-#~ msgstr ""
-
-#~ msgid "{name} {filename!r} is a file."
-#~ msgstr ""
-
-#~ msgid "{name} {filename!r} is a directory."
-#~ msgstr ""
-
-#~ msgid "{name} {filename!r} is not readable."
-#~ msgstr ""
-
-#~ msgid "{name} {filename!r} is not writable."
-#~ msgstr ""
-
-#~ msgid "{name} {filename!r} is not executable."
-#~ msgstr ""
-
-#~ msgid "{len_type} values are required, but {len_value} was given."
-#~ msgid_plural "{len_type} values are required, but {len_value} were given."
-#~ msgstr[0] ""
-#~ msgstr[1] ""
-
-#~ msgid "Are you sure you want to remove this product from %(store)s?"
-#~ msgstr ""
-
-#~ msgid "Are you sure you want to remove %(product)s from inventory?"
-#~ msgstr ""
-
-#~ msgid "Are you sure you want to delete shelf %(name)s?"
-#~ msgstr ""
 
