@@ -13,6 +13,7 @@ The Fiware Smart Store is built as a monolithic web application leveraging the F
 - **Frontend Template Engine:** Jinja2
 - **Styling:** Vanilla CSS3 (Custom Design System)
 - **Internationalization (i18n):** Flask-Babel (PyBabel)
+- **Map Integration:** Leaflet.js with OpenStreetMap tiles (via CDN).
 
 ## Directory Structure
 

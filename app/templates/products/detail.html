@@ -7,9 +7,16 @@
     <a href="{{ url_for('products.index') }}" class="btn btn-secondary mb-2">{{ _('<- Back to Products') }}</a>
     
     <div class="flex gap-4 items-start mt-4">
-        {% if product.image %}
-        <img src="{{ product.image }}" alt="{{ product.name }}" style="width: 200px; height: 150px; object-fit: cover; border: 1px solid var(--border-color); border-radius: 4px;">
-        {% endif %}
+        <div class="img-container" style="width: 200px; height: 150px;">
+            {% if product.image %}
+            <img src="{{ product.image }}" alt="{{ product.name }}" class="img-cover">
+            {% else %}
+            <div class="img-placeholder">
+                <span class="icon">📦</span>
+                <span>{{ _('No Image') }}</span>
+            </div>
+            {% endif %}
+        </div>
         <div>
             <h1>{{ product.name }}</h1>
             <p class="text-sm mb-2" style="color: var(--text-secondary); border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">${{ "%.2f"|format(product.price) }}</p>

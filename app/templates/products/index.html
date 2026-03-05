@@ -11,6 +11,7 @@
     <table>
         <thead>
             <tr>
+                <th>{{ _('Image') }}</th>
                 <th>{{ _('ID') }}</th>
                 <th>{{ _('Name') }}</th>
                 <th>{{ _('Price') }}</th>
@@ -22,6 +23,17 @@
         <tbody>
             {% for product in products %}
             <tr>
+                <td>
+                    <div class="img-container" style="width: 48px; height: 48px; border-radius: 4px;">
+                        {% if product.image %}
+                        <img src="{{ product.image }}" alt="{{ product.name }}" class="img-cover">
+                        {% else %}
+                        <div class="img-placeholder" style="font-size: 0.6rem; padding: 0;">
+                            <span class="icon" style="font-size: 1.2rem; margin: 0;">📦</span>
+                        </div>
+                        {% endif %}
+                    </div>
+                </td>
                 <td class="text-xs"><code>{{ product.id }}</code></td>
                 <td>{{ product.name }}</td>
                 <td>${{ "%.2f"|format(product.price) }}</td>

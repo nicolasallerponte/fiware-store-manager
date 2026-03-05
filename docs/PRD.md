@@ -14,7 +14,7 @@ Fiware Smart Store is a web application designed to manage a supermarket chain. 
 - Offer a dedicated view for exploring registered stores and their specific inventory and staff.
 - Offer a master product list detailing all products tracked across the supermarket chain.
 - Offer a master employee list detailing all staff members across the chain.
-- Ensure a premium user experience utilizing a light minimalist design system.
+- Ensure a premium user experience utilizing a light minimalist design system with interactive features like maps and standardized image handling.
 - Provide a localized user experience through multi-language support.
 
 ## Design System Constraints
@@ -42,8 +42,8 @@ Landing page providing a high-level overview. Must display metric cards summariz
 
 ### 2. Stores Module (`/stores`)
 
-- **Index View:** Displays a grid of all active stores within the chain, showing their name, image, and full address.
-- **Detail View:** Deep dive into a specific store. Shows the store's metadata (URN ID, address, coordinates), an image, and a tabular view of its inventory (product name, pricing, specific stock and shelf quantities).
+- **Index View:** Displays a grid of all active stores within the chain, showing their name, image (with placeholders if unavailable), and full address.
+- **Detail View:** Deep dive into a specific store. Shows the store's metadata (URN ID, address, coordinates), an interactive map (Leaflet.js + OpenStreetMap) centered on the store location, an image with standardized placeholders, and a tabular view of its inventory (product name, pricing, specific stock and shelf quantities).
 
 ### 3. Products Module (`/products`)
 

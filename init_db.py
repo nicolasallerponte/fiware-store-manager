@@ -71,7 +71,7 @@ with app.app_context():
     # Create 10 distinct Products
     products_data = [
         ('Organic Apples', 2.99, 'Medium', 'https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?auto=format&fit=crop&q=80&w=200', 'USA'),
-        ('Whole Milk', 3.49, 'Large', 'https://images.unsplash.com/photo-1563636619-e910ef2a844b?auto=format&fit=crop&q=80&w=200', 'Denmark'),
+        ('Whole Milk', 3.49, 'Large', 'https://images.unsplash.com/photo-1550583724-b2692b85b150?w=400', 'Denmark'),
         ('Artisan Bread', 4.50, 'Large', 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=200', 'France'),
         ('Free Range Eggs', 5.25, 'Medium', 'https://images.unsplash.com/photo-1506976785307-8732e854ad03?auto=format&fit=crop&q=80&w=200', 'Netherlands'),
         ('Avocados', 1.50, 'Small', 'https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?auto=format&fit=crop&q=80&w=200', 'Mexico'),
@@ -79,7 +79,7 @@ with app.app_context():
         ('Almond Butter', 8.49, 'Small', 'https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&q=80&w=200', 'Spain'),
         ('Greek Yogurt', 5.99, 'Large', 'https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&q=80&w=200', 'Greece'),
         ('Spinach', 3.99, 'Medium', 'https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&q=80&w=200', 'Italy'),
-        ('Pasta', 2.49, 'Medium', 'https://images.unsplash.com/photo-1551462147-37885abb3e91?auto=format&fit=crop&q=80&w=200', 'Italy')
+        ('Pasta', 2.49, 'Medium', 'https://images.unsplash.com/photo-1551462147-ff29053bfc14?w=400', 'Italy')
     ]
     
     products = []
