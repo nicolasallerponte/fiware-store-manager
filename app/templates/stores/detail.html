@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ store.name }} - Smart Store{% endblock %}
+
+{% block content %}
+<div class="mb-4">
+    <a href="{{ url_for('stores.index') }}" class="btn btn-secondary mb-2"><- Back to Stores</a>
+    <h1>{{ store.name }}</h1>
+    <p>{{ store.location }}</p>
+</div>
+
+<h2>Inventory</h2>
+{% if store.inventory %}
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Price</th>
+                <th>Stock Quantity</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in store.inventory %}
+            <tr>
+                <td>{{ item.product.name }}</td>
+                <td>${{ "%.2f"|format(item.product.price) }}</td>
+                <td>
+                    <span class="text-sm" style="color: var(--text-secondary);">{{ item.stock_quantity }} in stock</span>
+                </td>
+                <td>
+                    <a href="{{ url_for('products.detail', product_id=item.product.id) }}" class="btn btn-secondary text-sm">View Product</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% else %}
+<p>This store has no inventory yet.</p>
+{% endif %}
+{% endblock %}

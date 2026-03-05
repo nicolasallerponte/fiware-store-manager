@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard - Smart Store{% endblock %}
+
+{% block content %}
+<div class="flex justify-between items-center mb-4">
+    <h1>Overview</h1>
+</div>
+
+<div class="grid">
+    <div class="card stat-card">
+        <h3>Total Stores</h3>
+        <div class="stat-value">{{ total_stores }}</div>
+    </div>
+    <div class="card stat-card">
+        <h3>Total Products</h3>
+        <div class="stat-value">{{ total_products }}</div>
+    </div>
+</div>
+
+<div class="mt-4">
+    <a href="{{ url_for('stores.index') }}" class="btn btn-primary" style="margin-right: 1rem;">View All Stores</a>
+    <a href="{{ url_for('products.index') }}" class="btn btn-secondary">View All Products</a>
+</div>
+{% endblock %}

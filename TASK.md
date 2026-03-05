@@ -1,0 +1,21 @@
+# fiware-smart-store Tasks
+
+- [x] Planning Phase
+  - [x] Analyze requirements
+  - [x] Create implementation plan
+  - [x] Await user approval
+- [x] Development Phase
+  - [x] Implement database models (`Store`, `Product`, `InventoryItem` junction table)
+  - [x] Create initialization script for sample data (4 stores, 10 products, min 5 per store)
+  - [x] Implement backend routes
+    - [x] Main routes (`app/routes/main.py`)
+    - [x] Stores list/detail views (`app/routes/stores.py`)
+    - [x] Products list/detail views (`app/routes/products.py`)
+  - [x] Apply minimalist design system (Dark mode, Inter font, 1px #222 borders, no shadows/gradients)
+    - [x] `app/templates/dashboard.html`
+    - [x] `app/templates/stores/index.html` & `app/templates/stores/detail.html`
+    - [x] `app/templates/products/index.html` & `app/templates/products/detail.html`
+- [x] Documentation Phase
+  - [x] Update `docs/PRD.md`
+  - [x] Update `docs/architecture.md`
+  - [x] Update `docs/data_model.md`

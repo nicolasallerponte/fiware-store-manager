@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Stores - Smart Store{% endblock %}
+
+{% block content %}
+<div class="flex justify-between items-center mb-4">
+    <h1>Stores</h1>
+</div>
+
+<div class="grid">
+    {% for store in stores %}
+    <div class="card">
+        <h3>{{ store.name }}</h3>
+        <p>{{ store.location }}</p>
+        <p class="text-sm">Added on {{ store.created_at.strftime('%Y-%m-%d') }}</p>
+        <a href="{{ url_for('stores.detail', store_id=store.id) }}" class="btn btn-secondary">View Details -></a>
+    </div>
+    {% else %}
+    <p>No stores found.</p>
+    {% endfor %}
+</div>
+{% endblock %}
