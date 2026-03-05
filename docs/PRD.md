@@ -57,3 +57,12 @@ The system must be initialized with:
 - Exactly 10 distinct products.
 - A distribution of products that guarantees at least one store carries a minimum of 5 distinct products.
 - Products can belong to multiple stores (Many-to-Many inventory tracking).
+- Initial database is seeded via `init_db.py`.
+
+## Testing Requirements
+
+The application includes a comprehensive test suite using `pytest` and `pytest-flask`.
+
+- **Database Coverage:** All database models (Store, Product, InventoryItem) must have persistence and relationship tests using an in-memory SQLite database.
+- **Route Coverage:** All core routes (Dashboard, Store listing/detail, Product listing/detail) must be tested for correct status codes (200/404) and basic content presence.
+- **Fixtures:** Tests must use clean fixtures for the Flask application and database session to ensure test isolation.

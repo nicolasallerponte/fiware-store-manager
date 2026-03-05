@@ -40,12 +40,23 @@ fiware-smart-store/
 │           └── index.html
 ├── docs/                    # Technical documentation
 ├── translations/            # .po/.mo translation files for EN, ES, GL, DE
+├── tests/                   # Pytest test suite
+│   ├── conftest.py          # Shared fixtures (app, db_session)
+│   ├── test_models.py       # Unit tests for SQLAlchemy models
+│   └── test_routes.py       # Integration tests for Flask routes
 ├── babel.cfg                # Babel extraction configuration
-├── messages.pot             # Translation message template
-├── init_db.py               # Script for resetting DB and loading mock data
-├── requirements.txt         # Python project dependencies
+...
 └── run.py                   # Application entry point
 ```
+
+## Testing Strategy
+
+The application employs a robust testing strategy using `pytest`:
+
+1.  **Isolation:** Tests use an in-memory SQLite database (`sqlite:///:memory:`) to ensure speed and a clean state for every test run.
+2.  **Fixtures:** Shared fixtures in `tests/conftest.py` provide a pre-configured Flask test client and a SQLAlchemy database session.
+3.  **Model Testing:** Validates that data entities can be created, persisted, and that relationships (like cascade deletes) behave as expected.
+4.  **Route Testing:** Verifies that all endpoints return the intended HTTP status codes and render data correctly from the database.
 
 ## Routing Strategy
 

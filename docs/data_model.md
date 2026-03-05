@@ -61,3 +61,8 @@ Serves as an associative entity to resolve the Many-to-Many relationship between
 - `store_id` (Integer, Primary Key, Foreign Key): Reference to the `stores.id`.
 - `product_id` (Integer, Primary Key, Foreign Key): Reference to the `products.id`.
 - `stock_quantity` (Integer): The current count of the product available at that specific store location. Default `0`.
+
+## Testing Considerations
+
+- **Integrity:** The `InventoryItem` relationship includes a cascade delete on the `Store` relationship, meaning deleting a store automatically removes its inventory records. This is verified by the test suite.
+- **In-Memory Testing:** All models are compatible with in-memory SQLite for rapid automated testing without side effects on the development database.
