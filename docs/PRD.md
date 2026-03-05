@@ -14,6 +14,7 @@ Fiware Smart Store is a web application designed to manage a supermarket chain. 
 - Offer a dedicated view for exploring registered stores and their specific inventory and staff, with management capabilities for shelves and stock.
 - Offer a master product list detailing all products tracked across the supermarket chain, with the ability to manage which stores stock them.
 - Offer a master employee list detailing all staff members across the chain.
+- Implement FIWARE Orion Context Broker as a secondary data layer for entity tracking.
 - Ensure a premium user experience utilizing a light minimalist design system with interactive features like maps and standardized image handling.
 - Provide a localized user experience through multi-language support.
 

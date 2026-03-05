@@ -16,6 +16,14 @@
         <h3>{{ _('Total Products') }}</h3>
         <div class="stat-value">{{ total_products }}</div>
     </div>
+    <div class="card stat-card">
+        <h3>{{ _('Orion Status') }}</h3>
+        {% if use_orion %}
+            <div class="stat-value" style="color: #10b981; font-size: 1.25rem;">● {{ _('Orion Connected') }}</div>
+        {% else %}
+            <div class="stat-value" style="color: #ef4444; font-size: 1.25rem;">○ {{ _('Orion Unavailable — using SQLite') }}</div>
+        {% endif %}
+    </div>
 </div>
 
 <div class="mt-4">

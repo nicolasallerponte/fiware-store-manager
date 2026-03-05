@@ -14,6 +14,9 @@ The Fiware Smart Store is built as a monolithic web application leveraging the F
 - **Styling:** Vanilla CSS3 (Custom Design System)
 - **Internationalization (i18n):** Flask-Babel (PyBabel)
 - **Map Integration:** Leaflet.js with OpenStreetMap tiles (via CDN).
+- **Context Broker:** FIWARE Orion (Dockerized)
+- **Primary Database:** SQLite (SQLAlchemy)
+- **Context Storage:** MongoDB (for Orion)
 
 ## Directory Structure
 
