@@ -4,7 +4,7 @@
 
 {% block content %}
 <div class="flex justify-between items-center mb-4">
-    <h1>{{ _('Products Master List') }}</h1>
+    <h1>{{ _('Products') }}</h1>
 </div>
 
 <div class="table-container">
@@ -12,7 +12,6 @@
         <thead>
             <tr>
                 <th>{{ _('Image') }}</th>
-                <th>{{ _('ID') }}</th>
                 <th>{{ _('Name') }}</th>
                 <th>{{ _('Price') }}</th>
                 <th>{{ _('Size') }}</th>
@@ -26,7 +25,7 @@
                 <td>
                     <div class="img-container" style="width: 48px; height: 48px; border-radius: 4px;">
                         {% if product.image %}
-                        <img src="{{ product.image }}" alt="{{ product.name }}" class="img-cover">
+                        <img src="{{ product.image }}" alt="{{ _(product.name) }}" class="img-cover">
                         {% else %}
                         <div class="img-placeholder" style="font-size: 0.6rem; padding: 0;">
                             <span class="icon" style="font-size: 1.2rem; margin: 0;">📦</span>
@@ -34,18 +33,27 @@
                         {% endif %}
                     </div>
                 </td>
-                <td class="text-xs"><code>{{ product.id }}</code></td>
-                <td>{{ product.name }}</td>
-                <td>${{ "%.2f"|format(product.price) }}</td>
-                <td>{{ product.size }}</td>
-                <td>{{ product.origin_country }}</td>
+                <td>{{ _(product.name) }}</td>
+                <td>{{ "%.2f"|format(product.price) }} €</td>
+                <td>
+                    {% if product.size == 'small' %}
+                        <span class="badge badge-small">{{ _('small') }}</span>
+                    {% elif product.size == 'medium' %}
+                        <span class="badge badge-medium">{{ _('medium') }}</span>
+                    {% elif product.size == 'large' %}
+                        <span class="badge badge-large">{{ _('large') }}</span>
+                    {% else %}
+                        <span class="badge">{{ product.size }}</span>
+                    {% endif %}
+                </td>
+                <td>{{ _(product.origin_country) }}</td>
                 <td>
                     <a href="{{ url_for('products.detail', product_id=product.id) }}" class="btn btn-secondary text-sm">{{ _('View Details') }}</a>
                 </td>
             </tr>
             {% else %}
             <tr>
-                <td colspan="5">{{ _('No products found.') }}</td>
+                <td colspan="6">{{ _('No products found.') }}</td>
             </tr>
             {% endfor %}
         </tbody>

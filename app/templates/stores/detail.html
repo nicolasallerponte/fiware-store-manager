@@ -9,8 +9,8 @@
 
 {% block content %}
 <div class="mb-4">
-    <a href="{{ url_for('stores.index') }}" class="btn btn-secondary mb-2">{{ _('<- Back to Stores') }}</a>
-    
+    <a href="{{ url_for('stores.index') }}" class="btn btn-secondary mb-2">{{ _('← Back to Stores') }}</a>
+
     <div class="flex gap-4 items-start mt-4">
         <div class="img-container" style="width: 200px; height: 150px;">
             {% if store.image %}
@@ -25,7 +25,6 @@
         <div>
             <h1>{{ store.name }}</h1>
             <p style="color: var(--text-secondary);">{{ store.address_street }}, {{ store.address_locality }}, {{ store.address_region }}</p>
-            <p class="text-sm mt-2">ID: <code class="text-xs">{{ store.id }}</code></p>
         </div>
     </div>
 </div>
@@ -45,7 +44,7 @@
                 <th>{{ _('Product Name') }}</th>
                 <th>{{ _('Price') }}</th>
                 <th>{{ _('Stock Count') }}</th>
-                <th>{{ _('Shelf Count') }}</th>
+                <th>{{ _('Units on shelf') }}</th>
                 <th>{{ _('Action') }}</th>
             </tr>
         </thead>
@@ -53,7 +52,7 @@
             {% for item in store.inventory %}
             <tr>
                 <td>{{ item.product.name }}</td>
-                <td>${{ "%.2f"|format(item.product.price) }}</td>
+                <td>{{ "%.2f"|format(item.product.price) }} €</td>
                 <td>
                     <span class="text-sm" style="color: var(--text-secondary);">{{ _('%(count)s in stock', count=item.stock_count) }}</span>
                 </td>
@@ -61,7 +60,7 @@
                 <td>
                     <div class="flex gap-2">
                         <a href="{{ url_for('products.detail', product_id=item.product.id) }}" class="btn btn-secondary text-sm">{{ _('View') }}</a>
-                        <button class="btn btn-secondary text-sm" 
+                        <button class="btn btn-secondary text-sm"
                                 data-id="{{ item.id }}"
                                 data-name="{{ item.product.name }}"
                                 data-stock="{{ item.stock_count }}"
@@ -70,7 +69,7 @@
                                 onclick="prepareAndOpenEditInventoryModal(this)">
                             {{ _('Edit') }}
                         </button>
-                        <button class="btn btn-secondary text-sm" 
+                        <button class="btn btn-secondary text-sm"
                                 data-id="{{ item.id }}"
                                 data-name="{{ item.product.name }}"
                                 onclick="prepareAndOpenDeleteInventoryModal(this)">
@@ -111,7 +110,7 @@
                 <td>{{ shelf.latitude|round(4) }}, {{ shelf.longitude|round(4) }}</td>
                 <td>
                     <div class="flex gap-2">
-                        <button class="btn btn-secondary text-sm" 
+                        <button class="btn btn-secondary text-sm"
                                 data-id="{{ shelf.id }}"
                                 data-name="{{ shelf.name }}"
                                 data-capacity="{{ shelf.max_capacity }}"
@@ -120,7 +119,7 @@
                                 onclick="prepareAndOpenEditShelfModal(this)">
                             {{ _('Edit') }}
                         </button>
-                        <button class="btn btn-secondary text-sm" 
+                        <button class="btn btn-secondary text-sm"
                                 data-id="{{ shelf.id }}"
                                 data-name="{{ shelf.name }}"
                                 onclick="prepareAndOpenDeleteShelfModal(this)">
@@ -165,8 +164,6 @@
 <p>{{ _('No employees assigned to this store.') }}</p>
 {% endif %}
 
-<!-- Modals -->
-
 <!-- Add Inventory Modal -->
 <div id="addInventoryModal" class="modal">
     <div class="modal-content">
@@ -189,7 +186,7 @@
                 <input type="number" name="stock_count" id="stock_count" class="form-control" value="0" min="0" required>
             </div>
             <div class="form-group">
-                <label for="shelf_count">{{ _('Shelf Count') }}</label>
+                <label for="shelf_count">{{ _('Units on shelf') }}</label>
                 <input type="number" name="shelf_count" id="shelf_count" class="form-control" value="0" min="0" required>
             </div>
             <div class="form-group">
@@ -222,7 +219,7 @@
                 <input type="number" name="stock_count" id="edit_stock_count" class="form-control" min="0" required>
             </div>
             <div class="form-group">
-                <label for="edit_shelf_count">{{ _('Shelf Count') }}</label>
+                <label for="edit_shelf_count">{{ _('Units on shelf') }}</label>
                 <input type="number" name="shelf_count" id="edit_shelf_count" class="form-control" min="0" required>
             </div>
             <div class="form-group">
@@ -364,12 +361,11 @@
         const stock = btn.dataset.stock;
         const shelfCount = btn.dataset.shelfCount;
         const refShelf = btn.dataset.refShelf;
-        
+
         const form = document.getElementById('editInventoryForm');
-        // Using 'placeholder' to avoid unexpected URL encoding of the placeholder itself
         let url = "{{ url_for('stores.edit_inventory', store_id=store.id, item_id='placeholder') }}";
         form.action = url.replace('placeholder', encodeURIComponent(id));
-        
+
         document.getElementById('editInventoryProductName').textContent = name;
         document.getElementById('edit_stock_count').value = stock;
         document.getElementById('edit_shelf_count').value = shelfCount;
@@ -380,11 +376,11 @@
     function prepareAndOpenDeleteInventoryModal(btn) {
         const id = btn.dataset.id;
         const name = btn.dataset.name;
-        
+
         const form = document.getElementById('deleteInventoryForm');
         let url = "{{ url_for('stores.delete_inventory', store_id=store.id, item_id='placeholder') }}";
         form.action = url.replace('placeholder', encodeURIComponent(id));
-        
+
         document.getElementById('deleteInventoryProductName').textContent = name;
         openModal('deleteInventoryModal');
     }
@@ -395,11 +391,11 @@
         const capacity = btn.dataset.capacity;
         const lat = btn.dataset.lat;
         const lng = btn.dataset.lng;
-        
+
         const form = document.getElementById('editShelfForm');
         let url = "{{ url_for('stores.edit_shelf', store_id=store.id, shelf_id='placeholder') }}";
         form.action = url.replace('placeholder', encodeURIComponent(id));
-        
+
         document.getElementById('edit_shelf_name').value = name;
         document.getElementById('edit_max_capacity').value = capacity;
         document.getElementById('edit_shelf_latitude').value = lat;
@@ -410,11 +406,11 @@
     function prepareAndOpenDeleteShelfModal(btn) {
         const id = btn.dataset.id;
         const name = btn.dataset.name;
-        
+
         const form = document.getElementById('deleteShelfForm');
         let url = "{{ url_for('stores.delete_shelf', store_id=store.id, shelf_id='placeholder') }}";
         form.action = url.replace('placeholder', encodeURIComponent(id));
-        
+
         document.getElementById('deleteShelfName').textContent = name;
         openModal('deleteShelfModal');
     }

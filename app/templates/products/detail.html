@@ -4,8 +4,8 @@
 
 {% block content %}
 <div class="mb-4">
-    <a href="{{ url_for('products.index') }}" class="btn btn-secondary mb-2">{{ _('<- Back to Products') }}</a>
-    
+    <a href="{{ url_for('products.index') }}" class="btn btn-secondary mb-2">{{ _('← Back to Products') }}</a>
+
     <div class="flex gap-4 items-start mt-4">
         <div class="img-container" style="width: 200px; height: 150px;">
             {% if product.image %}
@@ -19,10 +19,9 @@
         </div>
         <div>
             <h1>{{ product.name }}</h1>
-            <p class="text-sm mb-2" style="color: var(--text-secondary); border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">${{ "%.2f"|format(product.price) }}</p>
-            <p><strong>{{ _('Size') }}:</strong> {{ product.size }}</p>
-            <p><strong>{{ _('Origin') }}:</strong> {{ product.origin_country }}</p>
-            <p class="text-sm mt-2">ID: <code class="text-xs">{{ product.id }}</code></p>
+            <p class="text-sm mb-2" style="color: var(--text-secondary); border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">{{ "%.2f"|format(product.price) }} €</p>
+            <p><strong>{{ _('Size') }}:</strong> {{ _(product.size) }}</p>
+            <p><strong>{{ _('Origin') }}:</strong> {{ _(product.origin_country) }}</p>
         </div>
     </div>
 </div>
@@ -40,12 +39,12 @@
         <p class="text-sm" style="color: var(--text-secondary);">{{ item.store.address_street }}, {{ item.store.address_locality }}</p>
         <div class="mt-4">
             <p class="text-xs"><strong>{{ _('Shelf') }}:</strong> {{ item.shelf.name }}</p>
-            <p class="text-xs"><strong>{{ _('Shelf Count') }}:</strong> {{ item.shelf_count }}</p>
+            <p class="text-xs"><strong>{{ _('Units on shelf') }}:</strong> {{ item.shelf_count }}</p>
         </div>
         <div class="flex justify-between items-center mt-4">
             <span class="text-sm" style="color: var(--text-secondary);">{{ _('%(count)s in stock', count=item.stock_count) }}</span>
             <div class="flex gap-2">
-                <button class="btn btn-secondary text-sm" 
+                <button class="btn btn-secondary text-sm"
                         data-id="{{ item.id }}"
                         data-store-id="{{ item.store.id }}"
                         data-store-name="{{ item.store.name }}"
@@ -55,7 +54,7 @@
                         onclick="prepareAndOpenEditInventoryModal(this)">
                     {{ _('Edit') }}
                 </button>
-                <button class="btn btn-secondary text-sm" 
+                <button class="btn btn-secondary text-sm"
                         data-id="{{ item.id }}"
                         data-store-name="{{ item.store.name }}"
                         onclick="prepareAndOpenDeleteInventoryModal(this)">
@@ -67,7 +66,7 @@
     {% endfor %}
 </div>
 {% else %}
-<p>{{ _('This product is tracking no inventory in any store.') }}</p>
+<p>{{ _('This product is not available in any store yet.') }}</p>
 {% endif %}
 
 <!-- Add to Store Modal -->
@@ -92,7 +91,7 @@
                 <input type="number" name="stock_count" id="stock_count" class="form-control" value="0" min="0" required>
             </div>
             <div class="form-group">
-                <label for="shelf_count">{{ _('Shelf Count') }}</label>
+                <label for="shelf_count">{{ _('Units on shelf') }}</label>
                 <input type="number" name="shelf_count" id="shelf_count" class="form-control" value="0" min="0" required>
             </div>
             <div class="form-group">
@@ -123,13 +122,12 @@
                 <input type="number" name="stock_count" id="edit_stock_count" class="form-control" min="0" required>
             </div>
             <div class="form-group">
-                <label for="edit_shelf_count">{{ _('Shelf Count') }}</label>
+                <label for="edit_shelf_count">{{ _('Units on shelf') }}</label>
                 <input type="number" name="shelf_count" id="edit_shelf_count" class="form-control" min="0" required>
             </div>
             <div class="form-group">
                 <label for="edit_ref_shelf">{{ _('Shelf') }}</label>
                 <select name="ref_shelf" id="edit_ref_shelf" class="form-control" required>
-                    <!-- Populated by JS -->
                 </select>
             </div>
             <div class="modal-footer">
@@ -192,7 +190,7 @@
     function updateShelves(storeId, shelfSelectId, currentShelfId = null) {
         const select = document.getElementById(shelfSelectId);
         select.innerHTML = '';
-        
+
         if (!storeId || !storeShelves[storeId]) {
             const opt = document.createElement('option');
             opt.value = "";
@@ -201,7 +199,7 @@
             select.disabled = true;
             return;
         }
-        
+
         select.disabled = false;
         storeShelves[storeId].forEach(shelf => {
             const opt = document.createElement('option');
@@ -219,15 +217,15 @@
         const stock = btn.dataset.stock;
         const shelfCount = btn.dataset.shelfCount;
         const refShelf = btn.dataset.refShelf;
-        
+
         const form = document.getElementById('editInventoryForm');
         let url = "{{ url_for('products.edit_inventory', product_id=product.id, item_id='placeholder') }}";
         form.action = url.replace('placeholder', encodeURIComponent(id));
-        
+
         document.getElementById('editStoreName').textContent = storeName;
         document.getElementById('edit_stock_count').value = stock;
         document.getElementById('edit_shelf_count').value = shelfCount;
-        
+
         updateShelves(storeId, 'edit_ref_shelf', refShelf);
         openModal('editInventoryModal');
     }
@@ -235,11 +233,11 @@
     function prepareAndOpenDeleteInventoryModal(btn) {
         const id = btn.dataset.id;
         const storeName = btn.dataset.storeName;
-        
+
         const form = document.getElementById('deleteInventoryForm');
         let url = "{{ url_for('products.delete_inventory', product_id=product.id, item_id='placeholder') }}";
         form.action = url.replace('placeholder', encodeURIComponent(id));
-        
+
         document.getElementById('deleteStoreName').textContent = storeName;
         openModal('deleteInventoryModal');
     }

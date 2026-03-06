@@ -1,14 +1,13 @@
 # Galician translations for PROJECT.
 # Copyright (C) 2026 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2026-03-05 23:09+0100\n"
-"PO-Revision-Date: 2026-03-05 20:35+0100\n"
+"PO-Revision-Date: 2026-03-06 15:00+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: gl\n"
 "Language-Team: gl <LL@li.org>\n"
@@ -18,929 +17,465 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.18.0\n"
 
-#: app/routes/products.py:39
 msgid "Product added to store inventory successfully."
-msgstr ""
+msgstr "Produto engadido ao inventario da tenda correctamente."
 
-#: app/routes/products.py:50 app/routes/stores.py:50
 msgid "Inventory item updated successfully."
-msgstr ""
+msgstr "Elemento de inventario actualizado correctamente."
 
-#: app/routes/products.py:58 app/routes/stores.py:58
 msgid "Inventory item deleted successfully."
-msgstr ""
+msgstr "Elemento de inventario eliminado correctamente."
 
-#: app/routes/stores.py:39
 msgid "Product added to inventory successfully."
-msgstr ""
+msgstr "Produto engadido ao inventario correctamente."
 
-#: app/routes/stores.py:81
 msgid "Shelf added successfully."
-msgstr ""
+msgstr "Estantería engadida correctamente."
 
-#: app/routes/stores.py:93
 msgid "Shelf updated successfully."
-msgstr ""
+msgstr "Estantería actualizada correctamente."
 
-#: app/routes/stores.py:101
 msgid "Shelf deleted successfully."
-msgstr ""
+msgstr "Estantería eliminada correctamente."
 
-#: app/templates/base.html:6
 msgid "Smart Store"
 msgstr "Tenda Intelixente"
 
-#: app/templates/base.html:77 app/templates/employees/index.html:7
-#: app/templates/stores/detail.html:140
 msgid "Employees"
 msgstr "Empregados"
 
-#: app/templates/base.html:78 app/templates/dashboard.html:7
 msgid "Overview"
 msgstr "Resumo"
 
-#: app/templates/base.html:79
 msgid "Products"
 msgstr "Produtos"
 
-#: app/templates/base.html:80 app/templates/stores/index.html:7
 msgid "Stores"
 msgstr "Tendas"
 
-#: app/templates/dashboard.html:3
 msgid "Dashboard - Smart Store"
 msgstr "Panel - Tenda Intelixente"
 
-#: app/templates/dashboard.html:12
 msgid "Total Stores"
 msgstr "Total Tendas"
 
-#: app/templates/dashboard.html:16
 msgid "Total Products"
 msgstr "Total Produtos"
 
-#: app/templates/dashboard.html:22
+msgid "Orion Status"
+msgstr "Estado de Orion"
+
+msgid "Orion Connected"
+msgstr "Orion Conectado"
+
+msgid "Orion Unavailable"
+msgstr "Orion Non Dispoñible"
+
+msgid "Using SQLite"
+msgstr "Usando SQLite"
+
 msgid "View All Stores"
 msgstr "Ver todas as tendas"
 
-#: app/templates/dashboard.html:23
 msgid "View All Products"
 msgstr "Ver todos os produtos"
 
-#: app/templates/employees/detail.html:3
-#, fuzzy, python-format
+#, python-format
 msgid "%(employee_name)s - Smart Store"
 msgstr "%(employee_name)s - Tenda Intelixente"
 
-#: app/templates/employees/detail.html:7
-#, fuzzy
-msgid "<- Back to Employees"
-msgstr "<- Volver aos Empregados"
+msgid "← Back to Employees"
+msgstr "← Volver aos Empregados"
 
-#: app/templates/employees/detail.html:16 app/templates/employees/index.html:19
 msgid "No Photo"
-msgstr ""
+msgstr "Sen Foto"
 
-#: app/templates/employees/detail.html:26
 msgid "Salary"
 msgstr "Salario"
 
-#: app/templates/employees/detail.html:30
-#, fuzzy
 msgid "Assigned Store"
 msgstr "Tenda Asignada"
 
-#: app/templates/employees/index.html:3
-#, fuzzy
 msgid "Employees - Smart Store"
 msgstr "Empregados - Tenda Intelixente"
 
-#: app/templates/employees/index.html:27
 msgid "At"
 msgstr "En"
 
-#: app/templates/employees/index.html:29 app/templates/stores/detail.html:157
-#, fuzzy
 msgid "View Profile"
 msgstr "Ver Perfil"
 
-#: app/templates/employees/index.html:33
-#, fuzzy
 msgid "No employees found."
 msgstr "Non se atoparon empregados."
 
-#: app/templates/products/detail.html:3
 #, python-format
 msgid "%(product_name)s - Smart Store"
 msgstr "%(product_name)s - Tenda Intelixente"
 
-#: app/templates/products/detail.html:7
-msgid "<- Back to Products"
-msgstr "<- Volver aos Produtos"
+msgid "← Back to Products"
+msgstr "← Volver aos Produtos"
 
-#: app/templates/products/detail.html:16 app/templates/stores/detail.html:21
-#: app/templates/stores/index.html:19
 msgid "No Image"
-msgstr ""
+msgstr "Sen Imaxe"
 
-#: app/templates/products/detail.html:23 app/templates/products/index.html:18
 msgid "Size"
 msgstr "Tamaño"
 
-#: app/templates/products/detail.html:24 app/templates/products/index.html:19
 msgid "Origin"
 msgstr "Orixe"
 
-#: app/templates/products/detail.html:31
 msgid "Available at Stores"
 msgstr "Dispoñible en tendas"
 
-#: app/templates/products/detail.html:32 app/templates/products/detail.html:77
-#: app/templates/products/detail.html:106
-#, fuzzy
 msgid "Add to Store"
-msgstr "Tenda Intelixente"
+msgstr "Engadir á tenda"
 
-#: app/templates/products/detail.html:42 app/templates/products/detail.html:99
-#: app/templates/products/detail.html:130 app/templates/stores/detail.html:196
-#: app/templates/stores/detail.html:229
-#, fuzzy
 msgid "Shelf"
-msgstr "Cantidade na Estantería"
+msgstr "Estantería"
 
-#: app/templates/products/detail.html:43 app/templates/products/detail.html:95
-#: app/templates/products/detail.html:126 app/templates/stores/detail.html:48
-#: app/templates/stores/detail.html:192 app/templates/stores/detail.html:225
-msgid "Shelf Count"
-msgstr "Cantidade na Estantería"
+msgid "Units on shelf"
+msgstr "Unidades na estantería"
 
-#: app/templates/products/detail.html:46 app/templates/stores/detail.html:58
 #, python-format
 msgid "%(count)s in stock"
 msgstr "%(count)s en stock"
 
-#: app/templates/products/detail.html:56 app/templates/stores/detail.html:71
-#: app/templates/stores/detail.html:121
 msgid "Edit"
-msgstr ""
+msgstr "Editar"
 
-#: app/templates/products/detail.html:62 app/templates/products/detail.html:154
-#: app/templates/stores/detail.html:77 app/templates/stores/detail.html:127
-#: app/templates/stores/detail.html:255 app/templates/stores/detail.html:337
 msgid "Delete"
-msgstr ""
+msgstr "Eliminar"
 
-#: app/templates/products/detail.html:70
-msgid "This product is tracking no inventory in any store."
-msgstr "Este produto non ten inventario en ningunha tenda."
+msgid "This product is not available in any store yet."
+msgstr "Este produto aínda non está dispoñible en ningunha tenda."
 
-#: app/templates/products/detail.html:82 app/templates/products/detail.html:120
-#, fuzzy
 msgid "Store"
-msgstr "Tendas"
+msgstr "Tenda"
 
-#: app/templates/products/detail.html:84
 msgid "Select a store"
 msgstr "Selecciona unha tenda"
 
-#: app/templates/products/detail.html:91 app/templates/products/detail.html:122
-#: app/templates/stores/detail.html:47 app/templates/stores/detail.html:188
-#: app/templates/stores/detail.html:221
-#, fuzzy
 msgid "Stock Count"
-msgstr "Cantidade en Stock"
+msgstr "Unidades en stock"
 
-#: app/templates/products/detail.html:101
-#: app/templates/products/detail.html:199
 msgid "Select store first"
 msgstr "Selecciona a tenda primeiro"
 
-#: app/templates/products/detail.html:105
-#: app/templates/products/detail.html:136
-#: app/templates/products/detail.html:153 app/templates/stores/detail.html:204
-#: app/templates/stores/detail.html:237 app/templates/stores/detail.html:254
-#: app/templates/stores/detail.html:286 app/templates/stores/detail.html:318
-#: app/templates/stores/detail.html:336
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: app/templates/products/detail.html:116
 msgid "Edit Inventory"
 msgstr "Editar inventario"
 
-#: app/templates/products/detail.html:137 app/templates/stores/detail.html:238
-#: app/templates/stores/detail.html:319
 msgid "Save Changes"
 msgstr "Gardar cambios"
 
-#: app/templates/products/detail.html:147
 msgid "Delete Inventory"
-msgstr "Eliminar inventario"
+msgstr "Eliminar do inventario"
 
-#: app/templates/products/detail.html:151
 msgid "Are you sure you want to remove this product from"
-msgstr "Estás seguro de que queres eliminar este producto de"
+msgstr "Estás seguro de que queres eliminar este produto de"
 
-#: app/templates/products/index.html:3
 msgid "Products - Smart Store"
 msgstr "Produtos - Tenda Intelixente"
 
-#: app/templates/products/index.html:7
-msgid "Products Master List"
-msgstr "Lista Mestra de Produtos"
-
-#: app/templates/products/index.html:14
 msgid "Image"
-msgstr ""
+msgstr "Imaxe"
 
-#: app/templates/products/index.html:15
-msgid "ID"
-msgstr "ID"
-
-#: app/templates/products/index.html:16 app/templates/stores/detail.html:100
-#: app/templates/stores/detail.html:146 app/templates/stores/detail.html:270
-#: app/templates/stores/detail.html:302
 msgid "Name"
 msgstr "Nome"
 
-#: app/templates/products/index.html:17 app/templates/stores/detail.html:46
 msgid "Price"
 msgstr "Prezo"
 
-#: app/templates/products/index.html:20 app/templates/stores/detail.html:49
-#: app/templates/stores/detail.html:103 app/templates/stores/detail.html:148
 msgid "Action"
 msgstr "Acción"
 
-#: app/templates/products/index.html:43
 msgid "View Details"
 msgstr "Ver Detalles"
 
-#: app/templates/products/index.html:48
 msgid "No products found."
 msgstr "Non se atoparon produtos."
 
-#: app/templates/stores/detail.html:3
 #, python-format
 msgid "%(store_name)s - Smart Store"
 msgstr "%(store_name)s - Tenda Intelixente"
 
-#: app/templates/stores/detail.html:12
-msgid "<- Back to Stores"
-msgstr "<- Volver ás Tendas"
+msgid "← Back to Stores"
+msgstr "← Volver ás Tendas"
 
-#: app/templates/stores/detail.html:36
 msgid "Inventory"
 msgstr "Inventario"
 
-#: app/templates/stores/detail.html:37 app/templates/stores/detail.html:174
 msgid "Add Product to Inventory"
-msgstr "Engadir producto ao inventario"
+msgstr "Engadir produto ao inventario"
 
-#: app/templates/stores/detail.html:45
 msgid "Product Name"
-msgstr "Nome do Produto"
+msgstr "Produto"
 
-#: app/templates/stores/detail.html:63
-#, fuzzy
 msgid "View"
-msgstr "Resumo"
+msgstr "Ver"
 
-#: app/templates/stores/detail.html:87
-#, fuzzy
 msgid "No products in inventory."
-msgstr "Non se atoparon produtos."
+msgstr "Non hai produtos no inventario."
 
-#: app/templates/stores/detail.html:91
 msgid "Shelves"
 msgstr "Estanterías"
 
-#: app/templates/stores/detail.html:92 app/templates/stores/detail.html:287
 msgid "Add Shelf"
 msgstr "Engadir estantería"
 
-#: app/templates/stores/detail.html:101
 msgid "Capacity"
 msgstr "Capacidade"
 
-#: app/templates/stores/detail.html:102
 msgid "Location"
-msgstr "Ubicación"
+msgstr "Localización"
 
-#: app/templates/stores/detail.html:137
 msgid "No shelves defined for this store."
 msgstr "Non hai estanterías definidas para esta tenda."
 
-#: app/templates/stores/detail.html:147
 msgid "Role"
 msgstr "Posto"
 
-#: app/templates/stores/detail.html:165
 msgid "No employees assigned to this store."
 msgstr "Non hai empregados asignados a esta tenda."
 
-#: app/templates/stores/detail.html:179
-#, fuzzy
 msgid "Product"
-msgstr "Produtos"
+msgstr "Produto"
 
-#: app/templates/stores/detail.html:181
-#, fuzzy
 msgid "Select a product"
-msgstr "Ver todos os produtos"
+msgstr "Selecciona un produto"
 
-#: app/templates/stores/detail.html:205
 msgid "Add Product"
-msgstr "Engadir producto"
+msgstr "Engadir produto"
 
-#: app/templates/stores/detail.html:215
 msgid "Edit Inventory Item"
 msgstr "Editar elemento de inventario"
 
-#: app/templates/stores/detail.html:248
 msgid "Delete Inventory Item"
-msgstr "Eliminar elemento de inventario"
+msgstr "Eliminar do inventario"
 
-#: app/templates/stores/detail.html:252
 msgid "Are you sure you want to remove this item from inventory?"
 msgstr "Estás seguro de que queres eliminar este artigo do inventario?"
 
-#: app/templates/stores/detail.html:265
 msgid "Add New Shelf"
 msgstr "Engadir nova estantería"
 
-#: app/templates/stores/detail.html:271
 msgid "e.g. Aisle 1"
-msgstr ""
+msgstr "ex. Corredor 1"
 
-#: app/templates/stores/detail.html:274 app/templates/stores/detail.html:306
 msgid "Max Capacity"
-msgstr ""
+msgstr "Capacidade máxima"
 
-#: app/templates/stores/detail.html:278 app/templates/stores/detail.html:310
 msgid "Latitude"
-msgstr ""
+msgstr "Latitude"
 
-#: app/templates/stores/detail.html:282 app/templates/stores/detail.html:314
 msgid "Longitude"
-msgstr ""
+msgstr "Lonxitude"
 
-#: app/templates/stores/detail.html:297
 msgid "Edit Shelf"
-msgstr ""
+msgstr "Editar estantería"
 
-#: app/templates/stores/detail.html:329
 msgid "Delete Shelf"
-msgstr ""
+msgstr "Eliminar estantería"
 
-#: app/templates/stores/detail.html:333
 msgid "Are you sure you want to delete shelf?"
-msgstr "Estás seguro de que queres eliminar a estantería?"
+msgstr "Estás seguro de que queres eliminar esta estantería?"
 
-#: app/templates/stores/detail.html:334
 msgid "Warning: All inventory items on this shelf will also be deleted."
-msgstr ""
+msgstr "Advertencia: Tamén se eliminarán todos os produtos desta estantería."
 
-#: app/templates/stores/index.html:3
 msgid "Stores - Smart Store"
 msgstr "Tendas - Tenda Intelixente"
 
-#: app/templates/stores/index.html:28
 msgid "View Details ->"
-msgstr "Ver Detalles ->"
+msgstr "Ver Detalles →"
 
-#: app/templates/stores/index.html:32
 msgid "No stores found."
 msgstr "Non se atoparon tendas."
 
-#: venv/lib/python3.14/site-packages/click/_termui_impl.py:613
-#, python-brace-format
-msgid "{editor}: Editing failed"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/_termui_impl.py:617
-#, python-brace-format
-msgid "{editor}: Editing failed: {e}"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/core.py:1114
-#: venv/lib/python3.14/site-packages/click/core.py:1151
-#, python-brace-format
-msgid "{text} {deprecated_message}"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/core.py:1170
-#, fuzzy
-msgid "Options"
-msgstr "Ubicación"
-
-#: venv/lib/python3.14/site-packages/click/core.py:1245
-#, python-brace-format
-msgid "Got unexpected extra argument ({args})"
-msgid_plural "Got unexpected extra arguments ({args})"
-msgstr[0] ""
-msgstr[1] ""
-
-#: venv/lib/python3.14/site-packages/click/core.py:1264
-#, python-brace-format
-msgid "DeprecationWarning: The command {name!r} is deprecated.{extra_message}"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/core.py:1448
-msgid "Aborted!"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/core.py:1822
-msgid "Commands"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/core.py:1853
-msgid "Missing command."
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/core.py:1931
-#, python-brace-format
-msgid "No such command {name!r}."
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/core.py:2355
-msgid "Value must be an iterable."
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/core.py:2378
-#, python-brace-format
-msgid "Takes {nargs} values but 1 was given."
-msgid_plural "Takes {nargs} values but {len} were given."
-msgstr[0] ""
-msgstr[1] ""
-
-#: venv/lib/python3.14/site-packages/click/core.py:2567
-#, python-brace-format
-msgid ""
-"DeprecationWarning: The {param_type} {name!r} is "
-"deprecated.{extra_message}"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/core.py:3015
-#, python-brace-format
-msgid "env var: {var}"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/core.py:3018
-#, python-brace-format
-msgid "default: {default}"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/core.py:3022
-msgid "required"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/core.py:3082
-msgid "(dynamic)"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/decorators.py:465
-#, python-format
-msgid "%(prog)s, version %(version)s"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/decorators.py:522
-msgid "Show the version and exit."
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/decorators.py:548
-msgid "Show this message and exit."
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/exceptions.py:50
-#: venv/lib/python3.14/site-packages/click/exceptions.py:89
-#, python-brace-format
-msgid "Error: {message}"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/exceptions.py:81
-#, python-brace-format
-msgid "Try '{command} {option}' for help."
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/exceptions.py:130
-#, python-brace-format
-msgid "Invalid value: {message}"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/exceptions.py:132
-#, python-brace-format
-msgid "Invalid value for {param_hint}: {message}"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/exceptions.py:190
-msgid "Missing argument"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/exceptions.py:192
-msgid "Missing option"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/exceptions.py:194
-msgid "Missing parameter"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/exceptions.py:196
-#, python-brace-format
-msgid "Missing {param_type}"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/exceptions.py:203
-#, python-brace-format
-msgid "Missing parameter: {param_name}"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/exceptions.py:223
-#, python-brace-format
-msgid "No such option: {name}"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/exceptions.py:235
-#, python-brace-format
-msgid "Did you mean {possibility}?"
-msgid_plural "(Possible options: {possibilities})"
-msgstr[0] ""
-msgstr[1] ""
-
-#: venv/lib/python3.14/site-packages/click/exceptions.py:282
-msgid "unknown error"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/exceptions.py:289
-#, python-brace-format
-msgid "Could not open file {filename!r}: {message}"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/formatting.py:156
-msgid "Usage:"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/parser.py:199
-#, python-brace-format
-msgid "Argument {name!r} takes {nargs} values."
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/parser.py:381
-#, python-brace-format
-msgid "Option {name!r} does not take a value."
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/parser.py:444
-#, python-brace-format
-msgid "Option {name!r} requires an argument."
-msgid_plural "Option {name!r} requires {nargs} arguments."
-msgstr[0] ""
-msgstr[1] ""
-
-#: venv/lib/python3.14/site-packages/click/shell_completion.py:332
-msgid "Shell completion is not supported for Bash versions older than 4.4."
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/shell_completion.py:339
-msgid "Couldn't detect Bash version, shell completion is not supported."
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/termui.py:165
-msgid "Repeat for confirmation"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/termui.py:181
-msgid "Error: The value you entered was invalid."
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/termui.py:183
-#, python-brace-format
-msgid "Error: {e.message}"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/termui.py:194
-msgid "Error: The two entered values do not match."
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/termui.py:253
-msgid "Error: invalid input"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/termui.py:872
-msgid "Press any key to continue..."
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/types.py:332
-#, python-brace-format
-msgid ""
-"Choose from:\n"
-"\t{choices}"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/types.py:369
-#, python-brace-format
-msgid "{value!r} is not {choice}."
-msgid_plural "{value!r} is not one of {choices}."
-msgstr[0] ""
-msgstr[1] ""
-
-#: venv/lib/python3.14/site-packages/click/types.py:460
-#, python-brace-format
-msgid "{value!r} does not match the format {format}."
-msgid_plural "{value!r} does not match the formats {formats}."
-msgstr[0] ""
-msgstr[1] ""
-
-#: venv/lib/python3.14/site-packages/click/types.py:482
-#, python-brace-format
-msgid "{value!r} is not a valid {number_type}."
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/types.py:538
-#, python-brace-format
-msgid "{value} is not in the range {range}."
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/types.py:719
-#, python-brace-format
-msgid "{value!r} is not a valid boolean. Recognized values: {states}"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/types.py:747
-#, python-brace-format
-msgid "{value!r} is not a valid UUID."
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/types.py:937
-msgid "file"
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/types.py:939
-#, fuzzy
-msgid "directory"
-msgstr "Inventario"
-
-#: venv/lib/python3.14/site-packages/click/types.py:941
-#, fuzzy
-msgid "path"
-msgstr "En"
-
-#: venv/lib/python3.14/site-packages/click/types.py:988
-#, python-brace-format
-msgid "{name} {filename!r} does not exist."
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/types.py:997
-#, python-brace-format
-msgid "{name} {filename!r} is a file."
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/types.py:1005
-#, python-brace-format
-msgid "{name} {filename!r} is a directory."
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/types.py:1014
-#, python-brace-format
-msgid "{name} {filename!r} is not readable."
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/types.py:1023
-#, python-brace-format
-msgid "{name} {filename!r} is not writable."
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/types.py:1032
-#, python-brace-format
-msgid "{name} {filename!r} is not executable."
-msgstr ""
-
-#: venv/lib/python3.14/site-packages/click/types.py:1099
-#, python-brace-format
-msgid "{len_type} values are required, but {len_value} was given."
-msgid_plural "{len_type} values are required, but {len_value} were given."
-msgstr[0] ""
-msgstr[1] ""
-
-#~ msgid "Added"
-#~ msgstr "Engadido"
-
-#~ msgid "This store has no inventory yet."
-#~ msgstr "Esta tenda aínda non ten inventario."
-
-#~ msgid "Added on %(date)s"
-#~ msgstr "Engadido o %(date)s"
-
-#~ msgid "View Store"
-#~ msgstr "Ver Tenda"
-
-#~ msgid "View Product"
-#~ msgstr "Ver Produto"
-
-#~ msgid "{editor}: Editing failed"
-#~ msgstr ""
-
-#~ msgid "{editor}: Editing failed: {e}"
-#~ msgstr ""
-
-#~ msgid "{text} {deprecated_message}"
-#~ msgstr ""
-
-#~ msgid "Options"
-#~ msgstr ""
-
-#~ msgid "Got unexpected extra argument ({args})"
-#~ msgid_plural "Got unexpected extra arguments ({args})"
-#~ msgstr[0] ""
-#~ msgstr[1] ""
-
-#~ msgid "DeprecationWarning: The command {name!r} is deprecated.{extra_message}"
-#~ msgstr ""
-
-#~ msgid "Aborted!"
-#~ msgstr ""
-
-#~ msgid "Commands"
-#~ msgstr ""
-
-#~ msgid "Missing command."
-#~ msgstr ""
-
-#~ msgid "No such command {name!r}."
-#~ msgstr ""
-
-#~ msgid "Value must be an iterable."
-#~ msgstr ""
-
-#~ msgid "Takes {nargs} values but 1 was given."
-#~ msgid_plural "Takes {nargs} values but {len} were given."
-#~ msgstr[0] ""
-#~ msgstr[1] ""
-
-#~ msgid ""
-#~ "DeprecationWarning: The {param_type} {name!r} "
-#~ "is deprecated.{extra_message}"
-#~ msgstr ""
-
-#~ msgid "env var: {var}"
-#~ msgstr ""
-
-#~ msgid "default: {default}"
-#~ msgstr ""
-
-#~ msgid "required"
-#~ msgstr ""
-
-#~ msgid "(dynamic)"
-#~ msgstr ""
-
-#~ msgid "%(prog)s, version %(version)s"
-#~ msgstr ""
-
-#~ msgid "Show the version and exit."
-#~ msgstr ""
-
-#~ msgid "Show this message and exit."
-#~ msgstr ""
-
-#~ msgid "Error: {message}"
-#~ msgstr ""
-
-#~ msgid "Try '{command} {option}' for help."
-#~ msgstr ""
-
-#~ msgid "Invalid value: {message}"
-#~ msgstr ""
-
-#~ msgid "Invalid value for {param_hint}: {message}"
-#~ msgstr ""
-
-#~ msgid "Missing argument"
-#~ msgstr ""
+msgid "small"
+msgstr "Pequeno"
 
-#~ msgid "Missing option"
-#~ msgstr ""
+msgid "medium"
+msgstr "Mediano"
 
-#~ msgid "Missing parameter"
-#~ msgstr ""
+msgid "large"
+msgstr "Grande"
 
-#~ msgid "Missing {param_type}"
-#~ msgstr ""
+msgid "Manzanas Ecológicas"
+msgstr "Mazás Ecolóxicas"
 
-#~ msgid "Missing parameter: {param_name}"
-#~ msgstr ""
+msgid "Leche Entera"
+msgstr "Leite Enteiro"
 
-#~ msgid "No such option: {name}"
-#~ msgstr ""
+msgid "Pan Artesano"
+msgstr "Pan Artesán"
 
-#~ msgid "Did you mean {possibility}?"
-#~ msgid_plural "(Possible options: {possibilities})"
-#~ msgstr[0] ""
-#~ msgstr[1] ""
+msgid "Huevos de Corral"
+msgstr "Ovos de Curral"
 
-#~ msgid "unknown error"
-#~ msgstr ""
+msgid "Aguacates"
+msgstr "Aguacates"
 
-#~ msgid "Could not open file {filename!r}: {message}"
-#~ msgstr ""
+msgid "Café en Grano"
+msgstr "Café en Gran"
 
-#~ msgid "Usage:"
-#~ msgstr ""
+msgid "Mantequilla de Almendras"
+msgstr "Manteiga de Améndoa"
 
-#~ msgid "Argument {name!r} takes {nargs} values."
-#~ msgstr ""
+msgid "Yogur Griego"
+msgstr "Iogur Grego"
 
-#~ msgid "Option {name!r} does not take a value."
-#~ msgstr ""
+msgid "Espinacas"
+msgstr "Espinacas"
 
-#~ msgid "Option {name!r} requires an argument."
-#~ msgid_plural "Option {name!r} requires {nargs} arguments."
-#~ msgstr[0] ""
-#~ msgstr[1] ""
+msgid "Pasta"
+msgstr "Pasta"
 
-#~ msgid "Shell completion is not supported for Bash versions older than 4.4."
-#~ msgstr ""
+msgid "España"
+msgstr "España"
 
-#~ msgid "Couldn't detect Bash version, shell completion is not supported."
-#~ msgstr ""
+msgid "Dinamarca"
+msgstr "Dinamarca"
 
-#~ msgid "Repeat for confirmation"
-#~ msgstr ""
+msgid "Francia"
+msgstr "Francia"
 
-#~ msgid "Error: The value you entered was invalid."
-#~ msgstr ""
+msgid "Países Bajos"
+msgstr "Países Baixos"
 
-#~ msgid "Error: {e.message}"
-#~ msgstr ""
+msgid "México"
+msgstr "México"
 
-#~ msgid "Error: The two entered values do not match."
-#~ msgstr ""
+msgid "Colombia"
+msgstr "Colombia"
 
-#~ msgid "Error: invalid input"
-#~ msgstr ""
+msgid "Grecia"
+msgstr "Grecia"
 
-#~ msgid "Press any key to continue..."
-#~ msgstr ""
+msgid "Italia"
+msgstr "Italia"
 
-#~ msgid ""
-#~ "Choose from:\n"
-#~ "\t{choices}"
-#~ msgstr ""
+msgid "Monitor inventory, staff and branches from a single control panel."
+msgstr "Monitoriza inventario, persoal e sucursais desde un único panel de control."
 
-#~ msgid "{value!r} is not {choice}."
-#~ msgid_plural "{value!r} is not one of {choices}."
-#~ msgstr[0] ""
-#~ msgstr[1] ""
+msgid "active branches"
+msgstr "sucursais activas"
 
-#~ msgid "{value!r} does not match the format {format}."
-#~ msgid_plural "{value!r} does not match the formats {formats}."
-#~ msgstr[0] ""
-#~ msgstr[1] ""
+msgid "catalogue items"
+msgstr "artigos no catálogo"
 
-#~ msgid "{value!r} is not a valid {number_type}."
-#~ msgstr ""
+msgid "Tomates Cherry"
+msgstr "Tomates Cherry"
 
-#~ msgid "{value} is not in the range {range}."
-#~ msgstr ""
+msgid "Queso Manchego"
+msgstr "Queixo Manchego"
 
-#~ msgid "{value!r} is not a valid boolean. Recognized values: {states}"
-#~ msgstr ""
+msgid "Aceite de Oliva"
+msgstr "Aceite de Oliva"
 
-#~ msgid "{value!r} is not a valid UUID."
-#~ msgstr ""
+msgid "Salmón Ahumado"
+msgstr "Salmón Afumado"
 
-#~ msgid "file"
-#~ msgstr ""
+msgid "Arroz Integral"
+msgstr "Arroz Integral"
 
-#~ msgid "directory"
-#~ msgstr ""
+msgid "Garbanzos"
+msgstr "Garavanzos"
 
-#~ msgid "path"
-#~ msgstr ""
+msgid "Chocolate Negro"
+msgstr "Chocolate Negro"
 
-#~ msgid "{name} {filename!r} does not exist."
-#~ msgstr ""
+msgid "Miel de Abeja"
+msgstr "Mel de Abella"
 
-#~ msgid "{name} {filename!r} is a file."
-#~ msgstr ""
+msgid "Zumo de Naranja"
+msgstr "Zume de Laranxa"
 
-#~ msgid "{name} {filename!r} is a directory."
-#~ msgstr ""
+msgid "Cerveza Artesana"
+msgstr "Cervexa Artesá"
 
-#~ msgid "{name} {filename!r} is not readable."
-#~ msgstr ""
+msgid "Vino Tinto"
+msgstr "Viño Tinto"
 
-#~ msgid "{name} {filename!r} is not writable."
-#~ msgstr ""
+msgid "Filete Ternera"
+msgstr "Filete de Tenreira"
 
-#~ msgid "{name} {filename!r} is not executable."
-#~ msgstr ""
+msgid "Patatas"
+msgstr "Patacas"
 
-#~ msgid "{len_type} values are required, but {len_value} was given."
-#~ msgid_plural "{len_type} values are required, but {len_value} were given."
-#~ msgstr[0] ""
-#~ msgstr[1] ""
+msgid "Cebollas"
+msgstr "Cebolas"
 
-#~ msgid "Are you sure you want to delete shelf %(name)s?"
-#~ msgstr ""
+msgid "Zanahorias"
+msgstr "Cenoras"
 
+msgid "Brócoli"
+msgstr "Brócoli"
+
+msgid "Plátanos"
+msgstr "Plátanos"
+
+msgid "Naranjas"
+msgstr "Laranxas"
+
+msgid "Fresas"
+msgstr "Amorodos"
+
+msgid "Arándanos"
+msgstr "Arándanos"
+
+msgid "Nueces"
+msgstr "Noces"
+
+msgid "Chucherías"
+msgstr "Chucharelas"
+
+msgid "Ensalada"
+msgstr "Ensalada"
+
+msgid "Sardinas en Aceite"
+msgstr "Sardiñas en Aceite"
+
+msgid "Batido"
+msgstr "Batido"
+
+msgid "Té Verde"
+msgstr "Té Verde"
+
+msgid "Harina de Trigo"
+msgstr "Fariña de Trigo"
+
+msgid "Mantequilla"
+msgstr "Manteiga"
+
+msgid "Smoothie"
+msgstr "Smoothie"
+
+msgid "Hummus"
+msgstr "Hummus"
+
+msgid "Noruega"
+msgstr "Noruega"
+
+msgid "Bélgica"
+msgstr "Bélxica"
+
+msgid "Alemania"
+msgstr "Alemaña"
+
+msgid "Polonia"
+msgstr "Polonia"
+
+msgid "Portugal"
+msgstr "Portugal"
+
+msgid "Japón"
+msgstr "Xapón"
+
+msgid "Suecia"
+msgstr "Suecia"
+
+msgid "Líbano"
+msgstr "Líbano"

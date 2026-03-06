@@ -3,31 +3,43 @@
 {% block title %}{{ _('Dashboard - Smart Store') }}{% endblock %}
 
 {% block content %}
-<div class="flex justify-between items-center mb-4">
-    <h1>{{ _('Overview') }}</h1>
+
+<div class="dashboard-hero">
+    <div class="dashboard-hero-text">
+        <p class="eyebrow">{{ _('Overview') }}</p>
+        <h1>Smart <em>Store</em><br>Manager</h1>
+        <p class="subtitle">{{ _('Monitor inventory, staff and branches from a single control panel.') }}</p>
+    </div>
+    <div class="dashboard-actions">
+        <a href="{{ url_for('stores.index') }}" class="btn btn-primary">{{ _('View All Stores') }}</a>
+        <a href="{{ url_for('products.index') }}" class="btn btn-secondary">{{ _('View All Products') }}</a>
+    </div>
 </div>
 
-<div class="grid">
-    <div class="card stat-card">
+<div class="stats-row">
+    <div class="stat-block">
         <h3>{{ _('Total Stores') }}</h3>
-        <div class="stat-value">{{ total_stores }}</div>
+        <span class="stat-number">{{ total_stores }}</span>
+        <span class="stat-label">{{ _('active branches') }}</span>
     </div>
-    <div class="card stat-card">
+    <div class="stat-block">
         <h3>{{ _('Total Products') }}</h3>
-        <div class="stat-value">{{ total_products }}</div>
+        <span class="stat-number">{{ total_products }}</span>
+        <span class="stat-label">{{ _('catalogue items') }}</span>
     </div>
-    <div class="card stat-card">
+    <div class="stat-block">
         <h3>{{ _('Orion Status') }}</h3>
         {% if use_orion %}
-            <div class="stat-value" style="color: #10b981; font-size: 1.25rem;">● {{ _('Orion Connected') }}</div>
+            <div class="orion-pill connected">
+                <span class="orion-dot"></span>{{ _('Orion Connected') }}
+            </div>
         {% else %}
-            <div class="stat-value" style="color: #ef4444; font-size: 1.25rem;">○ {{ _('Orion Unavailable — using SQLite') }}</div>
+            <div class="orion-pill unavailable">
+                <span class="orion-dot"></span>{{ _('Orion Unavailable') }}
+            </div>
+            <span class="orion-fallback">{{ _('Using SQLite') }}</span>
         {% endif %}
     </div>
 </div>
 
-<div class="mt-4">
-    <a href="{{ url_for('stores.index') }}" class="btn btn-primary" style="margin-right: 1rem;">{{ _('View All Stores') }}</a>
-    <a href="{{ url_for('products.index') }}" class="btn btn-secondary">{{ _('View All Products') }}</a>
-</div>
 {% endblock %}
