@@ -1,0 +1,5 @@
+# Exclude generated/template files from GitHub language stats
+*.html linguist-detectable=false
+translations/**/*.po linguist-detectable=false
+translations/**/*.mo linguist-detectable=false
+*.pot linguist-detectable=false
